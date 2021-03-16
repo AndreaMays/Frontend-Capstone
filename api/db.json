@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "email": "wh@amail.am",
+      "password": "whitney",
+      "name": "Whitney Houston",
+      "address": "9000 Badass Way: Newark, NJ",
+      "phone": "973-555-5555",
+      "id": 1
+    },
+    {
+      "email": "test@test.test",
+      "name": "test test",
+      "id": 2
+    },
+    {
+      "email": "test1@test.t",
+      "name": "test1 test1",
+      "address": "test1 undefined undefined undefined",
+      "phone": "5555555555",
+      "password": "test1",
+      "id": 3
+    }
+  ]
+}
