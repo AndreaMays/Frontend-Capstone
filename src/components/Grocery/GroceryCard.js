@@ -2,12 +2,23 @@ import { Card } from "react-bootstrap"
 import { CardDeck } from "react-bootstrap"
 
 export const GroceryCard = () =>  (
-<>
+  <>
+  <p>Welcome to the "A.R.C.C." app's resource page for groceries. We count it a privelege to be able to provide
+    groceries for our community members. Please read through each weeks groceries below. When you are ready, click the 
+    "Add Groceries" button. On the form, please select your location for "pick-up" or "drop-off". One reminder our drop-off
+    locations are very specific, so if you are not in that specific community or living on the street listed under
+    "locations" you will most likely need to pickup at the church. 
+    
+<br/>
+    Also on the form, you may select the weeks that you need groceries or select "all weeks". If you are in need of extra groceries
+    or have a specific item that needs to be left out of the pre-made bag, i.e. peanut butter due to peanut allergies, 
+    please be sure to notate that in the "message" box on the form. 
+  </p>
 <CardDeck>
   <Card>
     <Card.Img variant="top" src="Immediate-Relief-Starts-with-Food-Featured-Image-1400x716.png.webp"/> 
     <Card.Body>
-      <Card.Title>Groceries Items Week 1</Card.Title>
+      <Card.Title>April 20201: Groceries Items Week 1</Card.Title>
       <Card.Text>
         Grocery Items: 
         <li>1 Jar of Peanut Butter </li>
@@ -25,7 +36,7 @@ export const GroceryCard = () =>  (
   <Card>
     <Card.Img variant="top" src="holder.js/100px160" />
     <Card.Body>
-      <Card.Title>Grocery Items Week 2</Card.Title>
+      <Card.Title>April 2021: Grocery Items Week 2</Card.Title>
       <Card.Text>
       Grocery Items: 
         <li>2 Cans of Tuna </li>
@@ -42,7 +53,7 @@ export const GroceryCard = () =>  (
   <Card>
     <Card.Img variant="top" src="holder.js/100px160" />
     <Card.Body>
-      <Card.Title>Grocery Items Week 3</Card.Title>
+      <Card.Title>April 2021: Grocery Items Week 3</Card.Title>
       <Card.Text>
       Grocery Items: 
         <li>1 Box Dry Spaghetti</li>
@@ -59,7 +70,7 @@ export const GroceryCard = () =>  (
 <Card>
   <Card.Img variant="top" src="holder.js/100px160" />
   <Card.Body>
-    <Card.Title>Grocery Items Week 4</Card.Title>
+    <Card.Title>April 2021: Grocery Items Week 4</Card.Title>
     <Card.Text>
     Grocery Items: 
       <li>1 Gallon Milk</li>
