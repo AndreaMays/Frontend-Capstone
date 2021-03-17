@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { GroceryCard } from "./Grocery/GroceryCard"
+import { GroceryList } from "./Grocery/GroceryList"
+import { GroceryProvider } from "./Grocery/GroceryProvider"
 
 
 export const ApplicationViews = () => {
@@ -13,10 +14,11 @@ export const ApplicationViews = () => {
     </Route> */}
 
     <h2>Grocery List and Registration</h2>
-    <GroceryCard>
+    <GroceryProvider>
     <Route exact path="/groceries">
+        <GroceryList/>
     </Route>
-    </GroceryCard>
+    </GroceryProvider>
     </>
     )
 }
