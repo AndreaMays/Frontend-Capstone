@@ -1,5 +1,7 @@
 import { Card } from "react-bootstrap"
 import { CardDeck } from "react-bootstrap"
+import Figure from 'react-bootstrap/Figure'
+import React from "react"
 
 export const GroceryCard = () =>  (
   <>
@@ -16,7 +18,9 @@ export const GroceryCard = () =>  (
   </p>
 <CardDeck>
   <Card>
-    <Card.Img variant="top" src="Immediate-Relief-Starts-with-Food-Featured-Image-1400x716.png.webp"/> 
+    {/* <Card.Img variant="top" src="Grocery.png/200px"/>  */}
+    <img  src="/images/grocery.png" alt="171x180" />
+
     <Card.Body>
       <Card.Title>April 20201: Groceries Items Week 1</Card.Title>
       <Card.Text>
@@ -91,3 +95,4 @@ export const GroceryCard = () =>  (
 
 
 
+// variant="bottom"
