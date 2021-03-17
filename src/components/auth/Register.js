@@ -57,6 +57,7 @@ export const Register = () => {
 
     }
 
+    // Below is the registration form
     return (
         <main style={{ textAlign: "center" }}>
 
