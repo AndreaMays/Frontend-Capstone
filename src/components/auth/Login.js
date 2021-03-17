@@ -37,6 +37,7 @@ export const Login = () => {
             })
     }
 
+    // Below is the login form. Registration form is on register.js
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" open={existDialog}>
