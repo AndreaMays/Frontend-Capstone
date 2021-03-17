@@ -15,7 +15,11 @@ export const GroceryList = () => {
     return (
         <>
         <div className="groceries">
-        <Button variant="addButton" onClick={() => {history.pushState("/groceries")}}>Add Grocery</Button>{' '}
+        <h2>Grocery List and Registration</h2>
+        <Button variant="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button>{' '}
+        <p>
+        <Button variant="primary">Learn more</Button>
+        </p>
 
         {
             groceries.map(grocery => {
