@@ -6,6 +6,7 @@
       "name": "Whitney Houston",
       "address": "9000 Badass Way: Newark, NJ",
       "phone": "973-555-5555",
+      "isAdmin": "flase",
       "id": 1
     },
     {
@@ -18,8 +19,43 @@
       "name": "test1 test1",
       "address": "test1 undefined undefined undefined",
       "phone": "5555555555",
+      "isAdmin": "false",
       "password": "test1",
       "id": 3
     }
-  ]
+  ],
+  "groceries": [
+    {
+      "userId": 1,
+      "deliveryId": 1,
+      "isReceived": "false"
+    }
+  ],
+"location": [
+  {
+    "id": 2,
+    "name": "Pickup Location - South Nashville Church",
+    "address": "Tusculuum Drive"
+  },
+  {
+    "id": 2,
+    "name": "Dropoff: Ocala North, Nashville TN",
+    "address": "304-189 Ocala Drive"
+  },
+  {
+    "id": 3,
+    "name": "Dropoff: Ocala South, Nashville TN",
+    "address": "133-181 Ocala Drive"
+  },
+  {
+    "id": 4,
+    "name": "Dropoff: InTown Suites, Nashville TN",
+    "address": "Bell Road"
+  },
+  {
+    "id": 5,
+    "name": "Dropoff: Stonebrook Apartments - Nashville TN",
+    "address": "304-189 Ocala Drive"
+  }
+]
 }
