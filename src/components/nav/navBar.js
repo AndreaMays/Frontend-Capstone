@@ -12,7 +12,7 @@ export const NavBar = (props) => {
       <Nav.Link eventKey="about">About</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="groceries">Groceries</Nav.Link>
+      <Nav.Link href="/groceries">Groceries</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link eventKey="children"> Children</Nav.Link>
