@@ -24,14 +24,58 @@
       "id": 3
     }
   ],
-  "groceries": [
+
+  "products": [
     {
       "userId": 1,
       "deliveryId": 1,
       "isReceived": "false",
-      "locationId": 4
+      "locationId": 4,
+      "month": "April 2021:",
+      "groceryTitle": "Groceries Items Week 1"
     }
   ],
+
+"groceries":[
+  {    
+    "name": "1 Jar of Peanut Butter",
+    "image": "FoodPantry4.jpg"
+  },
+  {    
+    "name": "1 Box Cereal ",
+    "image": ""
+  },
+  {    
+    "name": "3 small boxes of milk",
+    "image": ""
+  },
+  {    
+    "name": "1 Bag of Celery",
+    "image": ""
+  },
+  {    
+    "name": "1 Pint of Yogurt",
+    "image": ""
+  },
+  {    
+    "name": "1 Package of Hotdogs",
+    "image": ""
+  },
+  {    
+    "name": "2 Large Cans of Chicken",
+    "image": ""
+  },
+  {    
+    "name": "1 Bag of Apples",
+    "image": ""
+  },
+  {    
+    "name": "1 Box Crackers",
+    "image": ""
+  }
+
+],
+
 "location": [
   {
     "id": 1,

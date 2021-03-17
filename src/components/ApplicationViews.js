@@ -1,9 +1,9 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { GroceryList } from "./Grocery/GroceryList"
-import { GroceryProvider } from "./Grocery/GroceryProvider"
+import { ProductProvider } from "./Grocery/GroceryProvider"
 import { Home } from "./Home"
-
+import { About } from "./About"
 
 export const ApplicationViews = () => {
     return (
@@ -12,15 +12,15 @@ export const ApplicationViews = () => {
        <Home />
     </Route> 
 
-    {/* <Route exact path="/about">
-    </Route> */} 
-
+   <Route exact path="/about">
+       <About />
+    </Route> 
     
-    <GroceryProvider>
+    <ProductProvider>
     <Route exact path="/groceries">
         <GroceryList/>
     </Route>
-    </GroceryProvider>
+    </ProductProvider>
     </>
     )
 }

@@ -1,29 +1,28 @@
 import React, {useContext, useEffect } from "react"
-import {GroceryContext} from "./GroceryProvider"
+import {ProductContext} from "./GroceryProvider"
 import { GroceryCard } from "./GroceryCard"
 import { useHistory } from "react-router"
 import { Button } from "react-bootstrap"
 
 export const GroceryList = () => {
-    const { groceries, getGroceries } = useContext(GroceryContext)
+    const { products, getProducts } = useContext(ProductContext)
     const history = useHistory()
 
     useEffect(() => {
-        getGroceries()
+        getProducts()
     }, [])
 
     return (
         <>
         <div className="groceries">
         <h2>Grocery List and Registration</h2>
-        <Button variant="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button>{' '}
         <p>
-        <Button variant="primary">Learn more</Button>
+        <Button variant="primary" className="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button>
         </p>
-
+ 
         {
-            groceries.map(grocery => {
-                return <GroceryCard key={grocery.id} grocery={grocery}/>
+            products.map(product => {
+                return <GroceryCard key={product.id} product={product}/>
             })
         }
         </div>

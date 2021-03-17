@@ -3,7 +3,7 @@ import { CardDeck } from "react-bootstrap"
 import Figure from 'react-bootstrap/Figure'
 import React from "react"
 
-export const GroceryCard = () =>  (
+export const GroceryCard = (groceries, products) =>  (
   <>
   <p>Welcome to the "A.R.C.C." app's resource page for groceries. We count it a privelege to be able to provide
     groceries for our community members. Please read through each weeks groceries below. When you are ready, click the 
@@ -18,21 +18,11 @@ export const GroceryCard = () =>  (
   </p>
 <CardDeck>
   <Card>
-    {/* <Card.Img variant="top" src="Grocery.png/200px"/>  */}
-    <img  src="/images/grocery.png" alt="171x180" />
-
-    <Card.Body>
-      <Card.Title>April 20201: Groceries Items Week 1</Card.Title>
+  <Card.Img variant="top" src={groceries.image} />
+      <Card.Body>
+      <Card.Title>{products.groceryTitle}</Card.Title>
       <Card.Text>
-        Grocery Items: 
-        <li>1 Jar of Peanut Butter </li>
-        <li>1 Jar of Jelly </li>
-        <li>1 Box of Captin Crunch Cereal </li>
-        <li>3 Small Boxes of Milk </li>
-        <li>2 Large Cans of Chicken </li>
-        <li>1 Package of Hotdogs </li>
-        <li>1 package of Celery </li>
-            
+       {groceries.name}
       </Card.Text>
     </Card.Body>
   </Card>
