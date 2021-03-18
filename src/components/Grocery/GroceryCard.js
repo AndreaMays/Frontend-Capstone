@@ -9,13 +9,13 @@ export const GroceryCard = ({ menu}) =>  (
   <>
  
 <CardDeck>
-  <Card style={{ width: '18rem'}}>
-    <Card.Img variant="bottom" src={menu.image}
-    width={171}
-    height={180}
+  <Card className="groceryCard" style={{ width: '18rem'}}>
+    <Card.Img variant="bottom" src={menu.image} 
+    width={200}
+    height={200}
     alt="171x180"/>
     <Card.Body>
-      <Card.Title>{menu.title}</Card.Title>
+      <Card.Title>{menu.groceryMenu.title}</Card.Title>
       <Card.Text>
       Grocery Items: 
         <li>2 Cans of Tuna </li>

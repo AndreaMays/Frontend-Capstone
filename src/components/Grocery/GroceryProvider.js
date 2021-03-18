@@ -56,7 +56,7 @@ export const ProductProvider = (props) => {
 // GET JOIN TABLE GROCERIES AND MENU BELOW
 
     const getAllGroceryMenus = () => {
-        return fetch (`http://localhost:8088/groceryMenu`)
+        return fetch (`http://localhost:8088/groceryMenus`)
         .then(res => res.json())
         .then(setGroceryMenus)
     }
@@ -64,14 +64,14 @@ export const ProductProvider = (props) => {
     // function below we are getting the groceryMenu join table with the groceryMenuId and the productItemId
     // then setting putting it into json, then setting it into "SetGroceryMenuProducts"
     const getGroceryMenuProdItem = () => {
-        return fetch(`http://localhost:8088/groceryMenuProdItem`)
+        return fetch(`http://localhost:8088/groceryMenuProdItems?_expand=groceryMenu&_expand=productItem`)
         .then(res => res.json())
         .then(setGroceryMenuProducts)
     }
 
     // below we are getting the product items, putting it into json then setting it into "setProductItems"
     const getProductItem = () => {
-        return fetch(`http://localhost:8088/productItem`)
+        return fetch(`http://localhost:8088/productItems`)
         .then(res => res.json())
         .then(setProductItems)
     }

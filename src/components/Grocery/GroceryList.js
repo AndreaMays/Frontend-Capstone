@@ -7,15 +7,17 @@ import { Button } from "react-bootstrap"
 // add "get" function call to useEffect and "useContext"
 
 export const GroceryList = () => {
-    const { products, getProducts, groceryMenus, getAllGroceryMenus } = useContext(ProductContext)
+    const { products, getProducts, groceryMenus, getAllGroceryMenus, getGroceryMenuProdItem, getProductItem, groceryMenuProducts, productItems } = useContext(ProductContext)
     const history = useHistory()
 
     useEffect(() => {
         getProducts()
         getAllGroceryMenus()
+        getGroceryMenuProdItem()
+        getProductItem()
     }, [])
 
-    // console.log(groceryMenus)
+    console.log(groceryMenuProducts)
     return (
         <>
         <div className="groceries">
@@ -42,13 +44,20 @@ export const GroceryList = () => {
             })
         } */}
         {
-            groceryMenus.map(groceryMenu => {
-                console.log(groceryMenu)
-                return <GroceryCard key={groceryMenu.id} menu={groceryMenu}/>
+            groceryMenuProducts.map(groceryMenuProduct => {
+                return <GroceryCard key={groceryMenuProduct.id} menu={groceryMenuProduct}/>
             })
         }
+         {/* {
+             productItems.map(productItem => {
+                 return <GroceryCard key={productItem.id} item={productItem}/>
+                })
+            } */}
+
         </div>
         </>
     )
+    // console.log(groceryMenuProduct)
+    // console.log(productItem)
 }
 // line 24 -26 we are mapping through the products array. The yellow variable "menu and product" are what go to GroceyCard
