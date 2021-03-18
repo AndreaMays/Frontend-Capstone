@@ -9,16 +9,16 @@ export const NavBar = (props) => {
       <Nav.Link href="/home">Home</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="about">About</Nav.Link>
+      <Nav.Link href="/about">About</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link href="/groceries">Groceries</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="children"> Children</Nav.Link>
+      <Nav.Link href="/children"> Children</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="donations"> Donations</Nav.Link>
+      <Nav.Link href="/donations"> Donations</Nav.Link>
     </Nav.Item>
   </Nav>
  

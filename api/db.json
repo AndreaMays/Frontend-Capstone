@@ -10,28 +10,106 @@
       "id": 1
     },
     {
-      "email": "test@test.test",
-      "name": "test test",
-      "id": 2
-    },
-    {
       "email": "test1@test.t",
       "name": "test1 test1",
       "address": "test1 undefined undefined undefined",
       "phone": "5555555555",
-      "isAdmin": "false",
+      "isAdmin": false,
       "password": "test1",
       "id": 3
     }
   ],
-  "groceries": [
+
+  "products": [
     {
       "userId": 1,
       "deliveryId": 1,
       "isReceived": "false",
-      "locationId": 4
+      "locationId": 4,
+      "month": "April 2021:",
+      "title": "Groceries Items Week 1",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "deliveryId": 1,
+      "isReceived": "false",
+      "locationId": 4,
+      "month": "April 2021:",
+      
+      "id": 2
     }
   ],
+
+"groceryMenu":[
+
+  { "id": 1,
+    "week": 1,
+    "image": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/3/full-brown-bag.jpg",
+    "title": "Groceries Items Week 1"
+  },
+  {    
+    "id": 2,
+    "week": 2,
+    "image": "FoodPantry4.jpg",
+    "title": "Groceries Items Week 2"
+  },
+  {    
+    "id": 2,
+    "week": 1,
+    "image": "FoodPantry4.jpg",
+    "title": "Groceries Items Week 1"
+  },
+  {    
+    "id": 2,
+    "week": 1,
+    "image": "FoodPantry4.jpg",
+    "title": "Groceries Items Week 1"
+  } 
+
+],
+
+"productItem": [
+  {
+    "name": "1 Jar of Peanut Butter",
+    "id": 1
+  },
+  {
+    "name": "1 Jar Grape Jelly",
+    "id": 2
+  },
+  {
+    "name": "1 Box of Crackers",
+    "id": 3
+  },
+  {
+    "name": "2 Cans of Tuna",
+    "id": 4
+  }
+],
+
+"groceryMenuProdItem": [
+  {
+    "id": 1,
+    "groceryMenuId":1,
+    "productItemId": 1
+  },
+  {
+    "id": 2,
+    "groceryMenuId":1,
+    "productItemId": 2
+  },
+  {
+    "id": 4,
+    "groceryMenuId":2,
+    "productItemId": 3
+  },
+  {
+    "id": 3,
+    "groceryMenuId":2,
+    "productItemId": 4
+  }
+],
 "location": [
   {
     "id": 1,

@@ -39,7 +39,8 @@ export const Register = () => {
                             name: `${registerUser.firstName} ${registerUser.lastName}`,
                             address: `${registerUser.address} ${registerUser.city} ${registerUser.state} ${registerUser.zip}`,
                             phone: registerUser.phone,
-                            password: registerUser.password
+                            password: registerUser.password,
+                            isAdmin: false
                         })
                     })
                         .then(res => res.json())
