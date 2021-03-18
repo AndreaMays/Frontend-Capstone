@@ -75,7 +75,59 @@
     "id": 1
   },
   {
+    "name": "2 Cans of Tuna",
+    "id": 1
+  },
+  {
+    "name": "1 Bag Dry Black Beans",
+    "id": 1
+  },
+  {
+    "name": "1lb Dry White Rice",
+    "id": 1
+  },
+  {
+    "name": "6 Small Cartons of Regular Dairy Milk",
+    "id": 1
+  },
+  {
+    "name": "Breakfast Bars",
+    "id": 1
+  },
+  {
+    "name": "2 Boxes of Mac and Cheese",
+    "id": 1
+  },
+  {
+    "name": "1lb of Carrots",
+    "id": 1
+  },
+  {
     "name": "1 Jar Grape Jelly",
+    "id": 1
+  },
+  {
+    "name": "2 Cans of Chicken",
+    "id": 2
+  },
+  {
+    "name": "1 Box of Cereal",
+    "id": 2
+  },
+  {
+    "name": "1 Bag of Oranges",
+    "id": 2
+  },
+  {
+    "name": "1 Pint of Sourcream",
+    "id": 2
+  },
+  {
+    "name": "Frozen Chicken Wings",
+    "id": 2
+  },
+  {
+    "name": "1 Bag Frozen Chicken Chili",
     "id": 2
   },
   {
@@ -83,7 +135,55 @@
     "id": 3
   },
   {
+    "name": "1 Package of Sliced American Cheese",
+    "id": 3
+  },
+  {
+    "name": "1lb Onions",
+    "id": 3
+  },
+  {
+    "name": "1 Pint of Strawberry Yogurt",
+    "id": 3
+  },
+  {
+    "name": "2 Large Cans of Beef Stew",
+    "id": 3
+  },
+  {
+    "name": "1 Pint of Strawberry Yogurt",
+    "id": 3
+  },
+  {
     "name": "2 Cans of Tuna",
+    "id": 4
+  },
+  {
+    "name": "1lb of Oatmeal",
+    "id": 4
+  },
+  {
+    "name": "2 Cans of Mixed Fruit",
+    "id": 4
+  },
+  {
+    "name": "1 Box of Cake Mix",
+    "id": 4
+  },
+  {
+    "name": "1 Box of Dry Spaghetti",
+    "id": 4
+  },
+  {
+    "name": "2lbs of Apples",
+    "id": 4
+  },
+  {
+    "name": "6 Small Cartons of Chocolate Milk",
+    "id": 4
+  },
+  {
+    "name": "1 Jar Spaghetti Sauce",
     "id": 4
   }
 ],
