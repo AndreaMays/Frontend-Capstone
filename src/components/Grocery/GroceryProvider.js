@@ -8,7 +8,7 @@ export const ProductProvider = (props) => {
     const [products, setProducts] = useState([])
     const [groceryMenus, setGroceryMenus] = useState([])
     const [groceryMenuProducts, setGroceryMenuProducts] = useState([])
-    const [productItems, setProductItems] = useState([])
+    const [groceries, setGroceries] = useState([])
 
     // console.log("Hungry", getGroceries)
     // NOTE: line 11 -15 function is used in the GroceryList.js. We get groceries from db.json, return what we get, 
@@ -56,7 +56,7 @@ export const ProductProvider = (props) => {
 // GET JOIN TABLE GROCERIES AND MENU BELOW
 
     const getAllGroceryMenus = () => {
-        return fetch (`http://localhost:8088/groceryMenu`)
+        return fetch (`http://localhost:8088/groceryMenus`)
         .then(res => res.json())
         .then(setGroceryMenus)
     }
@@ -64,23 +64,23 @@ export const ProductProvider = (props) => {
     // function below we are getting the groceryMenu join table with the groceryMenuId and the productItemId
     // then setting putting it into json, then setting it into "SetGroceryMenuProducts"
     const getGroceryMenuProdItem = () => {
-        return fetch(`http://localhost:8088/groceryMenuProdItem`)
+        return fetch(`http://localhost:8088/groceryMenuProdItems?_expand=groceryMenu&_expand=productItem`)
         .then(res => res.json())
         .then(setGroceryMenuProducts)
     }
 
     // below we are getting the product items, putting it into json then setting it into "setProductItems"
-    const getProductItem = () => {
-        return fetch(`http://localhost:8088/productItem`)
+    const getGroceries = () => {
+        return fetch(`http://localhost:8088/productItems`)
         .then(res => res.json())
-        .then(setProductItems)
+        .then(setGroceries)
     }
 
     // pull groceryMenuProdItem id to pull the product items on line 62
     return (
         <ProductContext.Provider value={{
-            products, getProducts, addProduct, deleteProduct, updateProduct, getGroceryMenuProdItem, setProductItems, getProductItem,
-            getProductById, getAllGroceryMenus, groceryMenus, groceryMenuProducts, productItems
+            products, getProducts, addProduct, deleteProduct, updateProduct, getGroceryMenuProdItem, setGroceries, getGroceries,
+            getProductById, getAllGroceryMenus, groceryMenus, groceryMenuProducts, groceries
         }}>
             {props.children}
         </ProductContext.Provider>
