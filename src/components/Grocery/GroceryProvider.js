@@ -8,7 +8,7 @@ export const ProductProvider = (props) => {
     const [products, setProducts] = useState([])
     const [groceryMenus, setGroceryMenus] = useState([])
     const [groceryMenuProducts, setGroceryMenuProducts] = useState([])
-    const [productItems, setProductItems] = useState([])
+    const [groceries, setGroceries] = useState([])
 
     // console.log("Hungry", getGroceries)
     // NOTE: line 11 -15 function is used in the GroceryList.js. We get groceries from db.json, return what we get, 
@@ -70,17 +70,17 @@ export const ProductProvider = (props) => {
     }
 
     // below we are getting the product items, putting it into json then setting it into "setProductItems"
-    const getProductItem = () => {
+    const getGroceries = () => {
         return fetch(`http://localhost:8088/productItems`)
         .then(res => res.json())
-        .then(setProductItems)
+        .then(setGroceries)
     }
 
     // pull groceryMenuProdItem id to pull the product items on line 62
     return (
         <ProductContext.Provider value={{
-            products, getProducts, addProduct, deleteProduct, updateProduct, getGroceryMenuProdItem, setProductItems, getProductItem,
-            getProductById, getAllGroceryMenus, groceryMenus, groceryMenuProducts, productItems
+            products, getProducts, addProduct, deleteProduct, updateProduct, getGroceryMenuProdItem, setGroceries, getGroceries,
+            getProductById, getAllGroceryMenus, groceryMenus, groceryMenuProducts, groceries
         }}>
             {props.children}
         </ProductContext.Provider>
