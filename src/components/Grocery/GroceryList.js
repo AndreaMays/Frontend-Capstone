@@ -26,8 +26,12 @@ export const GroceryList = () => {
         <>
         <div className="groceries">
         <h2>Grocery List and Registration</h2>
+
+        <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
+              "Add Grocery"
+            </button>
         
-        <Button variant="primary" className="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button>
+        {/* <Button variant="primary" className="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button> */}
         
         <p>Welcome to the "A.R.C.C." app's resource page for groceries. We count it a privelege to be able to provide
         groceries for our community members. Please read through each weeks groceries below. When you are ready, click the 
