@@ -16,7 +16,7 @@ export const WeeklyMenuCard = ({week}) => {
                     { groceryMenuProducts.map(product => {
                         // console.log("HELP",groceryMenuProducts)
                         if(product.groceryMenuId === week.id) {
-                            console.log("hungry",product)
+                            // console.log("hungry",product)
                             return <GroceryCard key={product.id} menu={product}></GroceryCard>
                         }
                     })

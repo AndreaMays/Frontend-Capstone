@@ -33,30 +33,43 @@
       "userId": 1,
       "isReceived": "false",
       "locationId": 4,
-      "month": "April 2021:",
-      "title": "Groceries Items Week 1",
+      "groceryMenuId": 1,
+      "message": "pb allergy",
       "id": 1
     },
     {
       "userId": 1,
       "isReceived": "false",
       "locationId": 4,
-      "month": "April 2021:",
-      "title": "",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "isReceived": "false",
-      "locationId": 4,
-      "groceryMenusId": 1,
-      "month": "",
-      "title": "",
-      "textArea": "chocolate",
+      "groceryMenuId": 1,
+      "message": "shopping",
       "id": 2
     },
     {
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "userId": null,
+      "id": 9
+    },
+    {
+      "userId": 0,
+      "id": 10
     }
   ],
   "groceryMenus": [

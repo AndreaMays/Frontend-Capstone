@@ -18,6 +18,7 @@ export const GroceryCard = ({ menu }) => (
     alt="171x180"/>  */}
     <Card.Body>
       <Card.Title></Card.Title>
+     
       
       <Card.Text>
       Grocery Items:
@@ -27,9 +28,10 @@ export const GroceryCard = ({ menu }) => (
   </Card>
 
 </CardDeck>
+
+
 </>
   )
-
 
 
 

@@ -11,15 +11,16 @@ export const GroceryForm = () => {
     const { locations, getLocations } = useContext(LocationContext)
     
        // const {users, getUsers} = useContext(UserContext)
+       console.log("whatsThis", products)
 
     const currentUserId = parseInt(sessionStorage.getItem("arcc_user"))
 
     const [grocery, setGrocery] = useState({
-        usersId:currentUserId,
+        userId: currentUserId,
         locationId: 0,
-        textArea: "",
-        timeStamp: "",
-        week: ""
+        message: "",
+        isReceived: "",
+        groceryMenuId: 0
     });
 
     const [product, setProduct] = useState()
@@ -53,16 +54,16 @@ export const GroceryForm = () => {
             setIsLoading();
             if (grocery.userID === currentUserId) {
                 updateProduct({
+                    groceryMenuId: products.groceryMenuId,
                     locationId: products.locationId,
-                    textArea: products.textArea,
-                    week: products.title
+                    message: products.message,
                 })
             .then(() => history.push(`/groceries`)) 
            } else {
             addProduct({
+                groceryMenuId: products.groceryMenuId,
                 locationId: products.locationId,
-                textArea: products.textArea,
-                week: products.title
+                message: products.message,
             })
             .then(() => history.push("/groceries"))
             }
@@ -90,12 +91,12 @@ export const GroceryForm = () => {
 
             <fieldset>
             <div className="form-group">
-                <label htmlFor="groceryWeek">Grocery Week: </label>
-                <select value={products.groceryMenusId} name="groceryWeek" id="groceryWeek" onChange={handleControlledInputChange} className="form-control" >
+                <label htmlFor="groceryMenuId">Grocery Week: </label>
+                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} className="form-control" >
                     <option value="0">Select a Week</option>
-                    {groceryMenus.map(gm => (
+                    {groceryMenus.map(gm => (                                             
                         <option key={gm.id} value={gm.id}>
-                            {groceryMenus.title}
+                            {gm.title}
                         </option>
                     ))}
                 </select>
