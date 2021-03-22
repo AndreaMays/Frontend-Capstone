@@ -16,7 +16,7 @@ export const GroceryForm = () => {
     const currentUserId = parseInt(sessionStorage.getItem("arcc_user"))
 
     const [grocery, setGrocery] = useState({
-        usersId:currentUserId,
+        userId: currentUserId,
         locationId: 0,
         message: "",
         isReceived: "",
@@ -54,7 +54,6 @@ export const GroceryForm = () => {
             setIsLoading();
             if (grocery.userID === currentUserId) {
                 updateProduct({
-                    userId: 0,
                     groceryMenuId: products.groceryMenuId,
                     locationId: products.locationId,
                     message: products.message,
@@ -62,7 +61,6 @@ export const GroceryForm = () => {
             .then(() => history.push(`/groceries`)) 
            } else {
             addProduct({
-                userId: 0,
                 groceryMenuId: products.groceryMenuId,
                 locationId: products.locationId,
                 message: products.message,
