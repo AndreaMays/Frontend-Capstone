@@ -21,13 +21,13 @@ export const ProductProvider = (props) => {
     }
 
     const addProduct = (productObj) => {
-        return fetch ("http://localhost:8088/products"), {
+        return fetch ("http://localhost:8088/products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(productObj)
-        }
+        })
         .then(getProducts)
     }
 

@@ -18,7 +18,8 @@ export const GroceryForm = () => {
         usersId:currentUserId,
         locationId: 0,
         textArea: "",
-        timeStamp: ""
+        timeStamp: "",
+        week: ""
     });
 
     const [product, setProduct] = useState()
@@ -52,17 +53,16 @@ export const GroceryForm = () => {
             setIsLoading();
             if (grocery.userID === currentUserId) {
                 updateProduct({
-                    usersId: currentUserId,
-                    locationId: products.locatinId,
+                    locationId: products.locationId,
                     textArea: products.textArea,
-                    week: products.week
+                    week: products.title
                 })
             .then(() => history.push(`/groceries`)) 
            } else {
             addProduct({
-                locationId: products.locatinId,
+                locationId: products.locationId,
                 textArea: products.textArea,
-                week: products.week
+                week: products.title
             })
             .then(() => history.push("/groceries"))
             }
