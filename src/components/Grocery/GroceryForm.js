@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from"../Location/LocationProvider"
 import { ProductContext } from "./GroceryProvider"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import "./Grocery.css"
+import {Form} from "react-bootstrap"
 
 export const GroceryForm = () => {
-    const {addGrocery, getProducts, products} = useContext(ProductContext)
+    const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
     
        // const {users, getUsers} = useContext(UserContext)
@@ -17,15 +18,19 @@ export const GroceryForm = () => {
         usersId:currentUserId,
         locationId: 0,
         textArea: "",
-        timeStamp: ""
+        timeStamp: "",
+        week: ""
     });
+
+    const [product, setProduct] = useState()
 
     useEffect(() => {
         getProducts().then(getLocations)
     }, [])
 
-//  const {groceryId} = useParams()
-    const history = useHistory();
+   const [isLoading, setIsLoading] = useState(true)
+    const { productId } = useParams();
+    const history = useHistory()
 
     const handleControlledInputChange = (event) => {
         const newGrocery = {...grocery}
@@ -40,19 +45,63 @@ export const GroceryForm = () => {
         setGrocery(newGrocery)
     }
 
-    const handleClickSaveGroceryForm = () => {
+    const handleClickSaveEditForm = () => {
         const locationId = products.userId
         if(locationId === 0) {
             window.alert("Please select a pickup/dropOff location")
         } else {
-            addGrocery(grocery)
+            setIsLoading();
+            if (grocery.userID === currentUserId) {
+                updateProduct({
+                    locationId: products.locationId,
+                    textArea: products.textArea,
+                    week: products.title
+                })
+            .then(() => history.push(`/groceries`)) 
+           } else {
+            addProduct({
+                locationId: products.locationId,
+                textArea: products.textArea,
+                week: products.title
+            })
             .then(() => history.push("/groceries"))
             }
         }
-    
+    }
 
-    return (
+    useEffect(() => {
+        getProducts().then(() => {
+            if (productId) {
+                getProductById(productId)
+                .then(product => {
+                    setProduct(product)
+                    setIsLoading(false)
+                })
+            } else {
+                setIsLoading(false)
+            }
+        })
+
+    }, [])
+
+     return (
         <form className="groceryForm">
+             <h2 className="groceryForm__title">{productId ? "Edit Grocery Form" : "Add Grocery Form"}</h2>
+
+            <fieldset>
+            <div className="form-group">
+                <label htmlFor="groceryWeek">Grocery Week: </label>
+                <select value={products.groceryMenusId} name="groceryWeek" id="groceryWeek" onChange={handleControlledInputChange} className="form-control" >
+                    <option value="0">Select a Week</option>
+                    {groceryMenus.map(gm => (
+                        <option key={gm.id} value={gm.id}>
+                            {groceryMenus.title}
+                        </option>
+                    ))}
+                </select>
+                </div>
+            </fieldset>
+
             <fieldset>
             <div className="form-group">
                 <label htmlFor="LocationId">Location: </label>
@@ -66,18 +115,21 @@ export const GroceryForm = () => {
                 </select>
             </div>
         </fieldset>
+
         <fieldset>
                 <div className="form-group">
                     <label htmlFor="textArea">Allergy Text Message</label>
                     <textarea type="text" id="textArea" autoFocus className="form-control" onChange={handleControlledInputChange} value={grocery.textArea} />
                 </div>
-            </fieldset>
-            <button className="addButton" onClick={handleClickSaveGroceryForm}>
-              "Save Form"
-            </button>
-      
-        </form>
+        </fieldset>
+            <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
+                event.preventDefault()
+                handleClickSaveEditForm()}}> 
+                {productId ? "Add Grocery" : "Save Grocery"}
+              </button>
+</form>
 
 )
-                    
 }
+
+
