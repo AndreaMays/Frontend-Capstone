@@ -22,7 +22,7 @@ export const LocationProvider = (props) => {
     }
 
     const updateLocation = location => {
-        return fetch(`http://localhost:8088/animals/${location.id}`,{
+        return fetch(`http://localhost:8088/locations/${location.id}`,{
             method: "PUT",
             headers:{
                 "Content-Type": "application/json"

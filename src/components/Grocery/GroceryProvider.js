@@ -31,12 +31,12 @@ export const ProductProvider = (props) => {
         .then(getProducts)
     }
 
-    // const deleteProduct = ProductId => {
-    //     return fetch (`http://localhost:8088/products/${ProductId}`,{
-    //         method: "DELETE"
-    //     })
-    //     .then(getProducts)
-    // }
+    const deleteProduct = ProductId => {
+        return fetch (`http://localhost:8088/products/${ProductId}`,{
+            method: "DELETE"
+        })
+        .then(getProducts)
+    }
 
     // const updateProduct = productObj => {
     //     return fetch(`http://localhost:8088/products/${productObj.id}`, {
@@ -79,7 +79,7 @@ export const ProductProvider = (props) => {
     // pull groceryMenuProdItem id to pull the product items on line 62
     return (
         <ProductContext.Provider value={{
-            products, getProducts, addProduct, getGroceryMenuProdItem, setGroceries, getGroceries,
+            products, getProducts, addProduct, deleteProduct, getGroceryMenuProdItem, setGroceries, getGroceries,
             getProductById, getAllGroceryMenus, groceryMenus, groceryMenuProducts, groceries
         }}>
             {props.children}
@@ -89,4 +89,4 @@ export const ProductProvider = (props) => {
 
 // ProductContext is a bag holding all the provider products above
 // purple on line 65 is set as "useState". the orange color words are "functions"
-// deleteProduct, updateProduct,
+// , updateProduct,

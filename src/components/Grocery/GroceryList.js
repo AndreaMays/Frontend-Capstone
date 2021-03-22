@@ -20,6 +20,7 @@ export const GroceryList = () => {
         getGroceryMenuProdItem()
         getGroceries()
     }, [])
+    
 
     // console.log(groceryMenuProducts)
     return (

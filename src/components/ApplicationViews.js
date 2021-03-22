@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { ProductProvider } from "./Grocery/GroceryProvider"
 import { GroceryList } from "./Grocery/GroceryList"
 import {GroceryForm} from "./Grocery/GroceryForm"
+import {GroceryDetail} from "./Grocery/GroceryDetails"
 import {LocationProvider} from "./Location/LocationProvider"
 import {LocationList} from "./Location/LocationList"
 import { Home } from "./Home"
@@ -23,12 +24,16 @@ export const ApplicationViews = () => {
         <LocationProvider>
         <Route exact path="/groceries">
             <GroceryList/>
+
         </Route>
         <   Route path="/groceries/create">
                 <GroceryForm />
             </Route>
             < Route path="/groceries/edit/:groceriesId(\d+)">
-                <GroceryForm />
+                <GroceryForm/>
+            </Route>
+            <Route path="/groceris/detail/:productId(\d+)">
+            <GroceryDetail/> 
             </Route>
         </LocationProvider>
     </ProductProvider>
