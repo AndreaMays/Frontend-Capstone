@@ -11,7 +11,7 @@ export const GroceryForm = () => {
     const { locations, getLocations } = useContext(LocationContext)
     
        // const {users, getUsers} = useContext(UserContext)
-       console.log("whatsThis", products)
+       console.log("hungry", groceryMenus)
 
     const currentUserId = parseInt(sessionStorage.getItem("arcc_user"))
 
@@ -20,8 +20,8 @@ export const GroceryForm = () => {
         locationId: 0,
         message: "",
         isReceived: "",
-        groceryMenuId: "" ,
-        id: ""
+        groceryMenuId: parseInt(groceryMenus),
+        id: parseInt
     });
 
      useEffect(() => {
@@ -54,8 +54,8 @@ export const GroceryForm = () => {
             if (grocery.userID === currentUserId) {
                 updateProduct({
                     userId: currentUserId,
-                    groceryMenuId: products.groceryMenuId,
-                    locationId: products.locationId,
+                    groceryMenuId: parseInt(products.groceryMenuId),
+                    locationId: parseInt(products.locationId),
                     message: products.message,
                 })
             .then(() => history.push(`/groceries`)) 
