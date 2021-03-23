@@ -4,7 +4,7 @@ import "./Grocery.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const GroceryDetail = () => {
-  const { getProductById, deleteProduct } = useContext(ProductContext)
+  const { getProductById, deleteProduct, updateProduct } = useContext(ProductContext)
 
   console.log("curious", product)
 	const [product, setProduct] = useState({})
@@ -27,13 +27,14 @@ export const GroceryDetail = () => {
         })
     }
 
+
   return (
     <section className="grocery">
       <h3 className="grocery__location">{product.locationId}</h3>
-
+        console.log()
       <div classname="userOrders">
       <div className="groceryWeek">{product.title}</div>
-      <div className="groceryMessage">Location: {product.location}</div>
+      <div className="groceryMessage">Location: {product.message}</div>
 
       <div>
       <button className="deleteGroceryButton" onclick={handleRelease}>Delete</button>

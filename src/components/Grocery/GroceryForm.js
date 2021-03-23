@@ -11,7 +11,7 @@ export const GroceryForm = () => {
     const { locations, getLocations } = useContext(LocationContext)
     
        // const {users, getUsers} = useContext(UserContext)
-       console.log("whatsThis", products)
+    //    console.log("whatsThis", products)
 
     const currentUserId = parseInt(sessionStorage.getItem("arcc_user"))
 
@@ -24,6 +24,7 @@ export const GroceryForm = () => {
     });
 
     const [product, setProduct] = useState()
+    console.log("whatsTHis", product)
 
     useEffect(() => {
         getProducts().then(getLocations)
@@ -51,20 +52,17 @@ export const GroceryForm = () => {
         if(locationId === 0) {
             window.alert("Please select a pickup/dropOff location")
         } else {
-            setIsLoading();
+            setIsLoading(true);
             if (grocery.userID === currentUserId) {
                 updateProduct({
-                    groceryMenuId: products.groceryMenuId,
-                    locationId: products.locationId,
-                    message: products.message,
+                    userId: currentUserId,
+                    groceryMenuId: product.groceryMenuId,
+                    locationId: product.locationId,
+                    message: product.message,
                 })
             .then(() => history.push(`/groceries`)) 
            } else {
-            addProduct({
-                groceryMenuId: products.groceryMenuId,
-                locationId: products.locationId,
-                message: products.message,
-            })
+            addProduct({product})
             .then(() => history.push("/groceries"))
             }
         }
@@ -92,7 +90,7 @@ export const GroceryForm = () => {
             <fieldset>
             <div className="form-group">
                 <label htmlFor="groceryMenuId">Grocery Week: </label>
-                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} className="form-control" >
+                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} required autofocus className="form-control" >
                     <option value="0">Select a Week</option>
                     {groceryMenus.map(gm => (                                             
                         <option key={gm.id} value={gm.id}>
@@ -106,7 +104,7 @@ export const GroceryForm = () => {
             <fieldset>
             <div className="form-group">
                 <label htmlFor="LocationId">Location: </label>
-                <select value={products.locationId} name="location" id="locationId" onChange={handleControlledInputChange} className="form-control" >
+                <select value={products.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
                     <option value="0">Select a Location</option>
                     {locations.map(location => (
                         <option key={location.id} value={location.id}>
