@@ -40,38 +40,6 @@
   "products": [
     {
       "userId": 1,
-      "isReceived": false,
-      "locationId": 4,
-      "groceryMenuId": 1,
-      "message": "pb allergy",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "isReceived": false,
-      "locationId": 4,
-      "groceryMenuId": 1,
-      "message": "shopping",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 3,
-      "message": "adfada",
-      "isReceived": false,
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 3,
-      "locationId": 4,
-      "message": "please work",
-      "isReceived": false,
-      "id": 4
-    },
-    {
-      "userId": 1,
       "groceryMenuId": 1,
       "locationId": 3,
       "message": "round 2",
