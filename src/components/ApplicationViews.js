@@ -3,6 +3,8 @@ import { Route } from "react-router-dom"
 import { ProductProvider } from "./Grocery/GroceryProvider"
 import { GroceryList } from "./Grocery/GroceryList"
 import {GroceryForm} from "./Grocery/GroceryForm"
+import {UserProvider} from "./Users/UserProvider"
+import {UserList} from "./Users/UserList"
 import {GroceryDetail} from "./Grocery/GroceryDetails"
 import {LocationProvider} from "./Location/LocationProvider"
 import {LocationList} from "./Location/LocationList"
@@ -22,21 +24,30 @@ export const ApplicationViews = () => {
     
     <ProductProvider>
         <LocationProvider>
-        <Route exact path="/groceries">
+            <UserProvider>
+           <Route exact path="/groceries">
             <GroceryList/>
 
-        </Route>
-        <   Route path="/groceries/create">
-                <GroceryForm />
-            </Route>
-            < Route path="/groceries/edit/:groceriesId(\d+)">
-                <GroceryForm/>
-            </Route>
-            <Route path="/groceris/detail/:productId(\d+)">
-            <GroceryDetail/> 
-            </Route>
+                </Route>
+                <Route path="/groceries/create">
+                    <GroceryForm />
+                </Route>
+                < Route path="/groceries/edit/:groceriesId(\d+)">
+                    <GroceryForm/>
+                </Route>
+                <Route path="/groceries/details/${product.id}">
+                    <GroceryDetail/> 
+                </Route>
+            </UserProvider>
         </LocationProvider>
     </ProductProvider>
+
+            {/* Routing to userOrders */}
+             {/* <Route exact path="/orders">
+                <UserProvider>
+                    <UserList />
+                </UserProvider>
+            </Route> */}
 
    
 

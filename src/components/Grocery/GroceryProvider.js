@@ -1,5 +1,5 @@
 import React, {useState, createContext } from "react"
-import { GroceryCard } from "./GroceryCard"
+
 
 export const EventContext = createContext()
 export const ProductContext = createContext()

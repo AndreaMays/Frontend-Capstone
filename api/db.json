@@ -31,7 +31,7 @@
   "products": [
     {
       "userId": 1,
-      "isReceived": "false",
+      "isReceived": false,
       "locationId": 4,
       "groceryMenuId": 1,
       "message": "pb allergy",
@@ -39,110 +39,75 @@
     },
     {
       "userId": 1,
-      "isReceived": "false",
+      "isReceived": false,
       "locationId": 4,
       "groceryMenuId": 1,
       "message": "shopping",
       "id": 2
     },
     {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "adfada",
+      "isReceived": false,
       "id": 3
     },
     {
+      "userId": 1,
+      "groceryMenuId": 3,
+      "locationId": 4,
+      "message": "please work",
+      "isReceived": false,
       "id": 4
     },
     {
+      "userId": 1,
+      "groceryMenuId": 1,
+      "locationId": 3,
+      "message": "round 2",
+      "isReceived": false,
       "id": 5
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "1",
-        "message": "",
-        "isReceived": "",
-        "groceryMenuId": 0,
-        "timeStamp": 1616467627759,
-        "groceryId": "1",
-        "textArea": "Please work"
-      },
+      "userId": 1,
+      "groceryMenuId": 4,
+      "locationId": 1,
+      "message": "null",
+      "isReceived": false,
       "id": 6
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "2",
-        "message": "",
-        "isReceived": "",
-        "groceryMenuId": "",
-        "id": "",
-        "timeStamp": 1616468017436,
-        "groceryId": "4",
-        "textArea": "allergic to everything"
-      },
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "hope",
+      "isReceived": false,
       "id": 7
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "2",
-        "message": "i think you're working tonight :-)!!!!",
-        "isReceived": "",
-        "groceryMenuId": "",
-        "id": "",
-        "timeStamp": 1616468140442,
-        "groceryId": "1"
-      },
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "Week only",
+      "isReceived": false,
       "id": 8
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "2",
-        "message": "does this thing work",
-        "isReceived": "",
-        "groceryMenuId": "",
-        "id": "",
-        "timeStamp": 1616468978024,
-        "groceryId": "1"
-      },
+      "userId": 1,
+      "groceryMenuId": null,
+      "locationId": 4,
+      "message": "Will this appear to the userOrders",
+      "isReceived": false,
       "id": 9
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "3",
-        "message": "Hello",
-        "isReceived": "",
-        "groceryMenuId": null,
-        "id": "",
-        "timeStamp": 1616469123374,
-        "groceryId": "3"
-      },
+      "userId": 1,
+      "groceryMenuId": null,
+      "locationId": 2,
+      "message": "radklfja",
+      "isReceived": false,
       "id": 10
-    },
-    {
-      "grocery": {
-        "userId": null,
-        "locationId": "4",
-        "message": "Please showup on my dom",
-        "isReceived": "",
-        "groceryMenuId": null,
-        "timeStamp": 1616469333502,
-        "groceryId": "3"
-      },
-      "id": 11
-    },
-    {
-      "grocery": {
-        "userId": null,
-        "locationId": "3",
-        "message": "does the parseINt really work? What does it mean",
-        "isReceived": "",
-        "groceryMenuId": null,
-        "timeStamp": 1616469460717,
-        "groceryId": "3"
-      },
-      "id": 12
     }
   ],
   "groceryMenus": [

@@ -2,11 +2,18 @@ import { Card, CardDeck } from "react-bootstrap"
 import { ProductContext } from "./GroceryProvider"
 import {GroceryCard} from "./GroceryCard"
 import React, {useContext} from 'react'
-
+import {useEffect} from "react"
 
 
 export const WeeklyMenuCard = ({week}) => {
-    const {groceryMenuProducts} = useContext(ProductContext)
+    const {groceryMenuProducts, getProducts, products} = useContext(ProductContext)
+
+    // history = useHistory()
+
+    // useEffect(() => {
+    //     console.log("useEffect", product)
+    //     getProducts()
+    //    }, [])
 
     return (
         <CardDeck>
@@ -20,9 +27,15 @@ export const WeeklyMenuCard = ({week}) => {
                             return <GroceryCard key={product.id} menu={product}></GroceryCard>
                         }
                     })
-
-                    }
+                }
+                
+                {/* <button className="editGroceryButton" onclick={() => { history.push(`/groceries/details/${product.id}`)}}>Edit</button>
+                {products.find(productId => {(groceryMenuId === groceryMenu.id)
+                console.log(productId)
+                ) */}
+            
                 </Card.Body>
+
             </Card>
         </CardDeck>
     )

@@ -15,6 +15,9 @@ export const NavBar = (props) => {
       <Nav.Link href="/groceries">Groceries</Nav.Link>
     </Nav.Item>
     <Nav.Item>
+      <Nav.Link href="/orders"> UserOrders</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
       <Nav.Link href="/children"> Children</Nav.Link>
     </Nav.Item>
     <Nav.Item>
