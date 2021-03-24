@@ -42,21 +42,15 @@ export const ApplicationViews = () => {
         </LocationProvider>
     </ProductProvider>
 
-            {/* Routing to userOrders */}
-             {/* <Route exact path="/orders">
+            
+             <Route exact path="/orders">
                 <UserProvider>
                     <UserList />
                 </UserProvider>
-            </Route> */}
+            </Route>
 
-   
+      
 
-            {/* Render the loctation list when http://localhost:3000/animals */}
-                {/* <Route path="/locations">
-                    <LocationProvider>
-                        <LocationList />
-                    </LocationProvider>
-                </Route>     */}
     </>
     )
 }
