@@ -8,34 +8,39 @@ import "./Grocery.css"
 import {Form} from "react-bootstrap"
 
 export const GroceryForm = () => {
-    const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct} = useContext(ProductContext)
+    const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct, getAllGroceryMenus} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { users, getUsers} = useContext(UserContext)
-    
-       // const {users, getUsers} = useContext(UserContext)
-    //    console.log("hungry", groceryMenus)
 
+    const [isLoading, setIsLoading] = useState(true)
+    const { productId } = useParams();
+    const history = useHistory()
+    
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
     const [grocery, setGrocery] = useState({
-        // userId: currentUserId,
-        // locationId: 0,
-        // message: "",
-        // isReceived: "",
-        // groceryMenuId: 0
+        userId: currentUserId,
+        locationId: 0,
+        message: "",
+        isReceived: "",
+        groceryMenuId: 0
         
     });
 
      useEffect(() => {
-        getProducts().then(getLocations)
+        getAllGroceryMenus().then(getLocations).then(() => {
+            if(productId){
+                getProductById(productId)
+                .then(setGrocery)
+                }
+
+        })
     }, [])
 
-   const [isLoading, setIsLoading] = useState(true)
-    const { productId } = useParams();
-    const history = useHistory()
+
 
     const handleControlledInputChange = (event) => {
-        // console.log(event.target)
+        console.log(event.target.id)
         const newGrocery = {...grocery}
         let selectedVal = event.target.value
 
@@ -97,7 +102,7 @@ export const GroceryForm = () => {
             <fieldset>
             <div className="form-group">
                 <label htmlFor="groceryMenuId">Grocery Week: </label>
-                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
+                <select value={grocery.groceryMenuId} name="groceryMenu" id="groceryMenuId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
                     <option value="0">Select a Week</option>
                     {groceryMenus.map(gm => (                                             
                         <option key={gm.id} value={gm.id}>
@@ -111,7 +116,7 @@ export const GroceryForm = () => {
             <fieldset>
             <div className="form-group">
                 <label htmlFor="LocationId">Location: </label>
-                <select value={products.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
+                <select value={grocery.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Select location">
                     <option value="0">Select a Location</option>
                     {locations.map(location => (
                         <option key={location.id} value={location.id}>
@@ -125,7 +130,7 @@ export const GroceryForm = () => {
         <fieldset>
                 <div className="form-group">
                     <label htmlFor="message">Allergy Text Message</label>
-                    <textarea type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} value={grocery.textArea} />
+                    <textarea type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
                 </div>
         </fieldset>
             <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
