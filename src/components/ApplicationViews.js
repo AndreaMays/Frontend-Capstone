@@ -32,7 +32,7 @@ export const ApplicationViews = () => {
                 <Route path="/groceries/create">
                     <GroceryForm />
                 </Route>
-                < Route path="/orders/edit/:groceriesId(\d+)">
+                < Route path="/orders/edit/:productId(\d+)">
                     <GroceryForm/>
                 </Route>
                 <Route path="/groceries/details/${product.id}">
