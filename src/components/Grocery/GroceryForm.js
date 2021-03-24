@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from"../Location/LocationProvider"
 import { ProductContext } from "./GroceryProvider"
+import { UserContext} from "../Users/UserProvider"
 import { useHistory, useParams } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import "./Grocery.css"
@@ -9,6 +10,7 @@ import {Form} from "react-bootstrap"
 export const GroceryForm = () => {
     const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
+    const { users, getUsers} = useContext(UserContext)
     
        // const {users, getUsers} = useContext(UserContext)
     //    console.log("hungry", groceryMenus)
@@ -33,7 +35,7 @@ export const GroceryForm = () => {
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
-        console.log(event.target)
+        // console.log(event.target)
         const newGrocery = {...grocery}
         let selectedVal = event.target.value
 

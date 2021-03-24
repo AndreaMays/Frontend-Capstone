@@ -26,6 +26,15 @@
       "password": "phoebe",
       "isAdmin": false,
       "id": 4
+    },
+    {
+      "email": "monicaG@amail.a",
+      "name": "Monica  Gellar",
+      "address": "500 Friends Drive undefined undefined undefined",
+      "phone": "555-555-5555",
+      "password": "monicaG",
+      "isAdmin": false,
+      "id": 5
     }
   ],
   "products": [
@@ -95,7 +104,7 @@
     },
     {
       "userId": 1,
-      "groceryMenuId": null,
+      "groceryMenuId": 1,
       "locationId": 4,
       "message": "Will this appear to the userOrders",
       "isReceived": false,
@@ -103,11 +112,19 @@
     },
     {
       "userId": 1,
-      "groceryMenuId": null,
+      "groceryMenuId": 4,
       "locationId": 2,
       "message": "radklfja",
       "isReceived": false,
       "id": 10
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 2,
+      "message": "PLEASE  WORK",
+      "isReceived": false,
+      "id": 11
     }
   ],
   "groceryMenus": [

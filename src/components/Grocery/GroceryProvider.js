@@ -32,8 +32,8 @@ export const ProductProvider = (props) => {
     }
 
     const deleteProduct = ProductId => {
-        return fetch (`http://localhost:8088/products/${ProductId}`,{
-            method: "DELETE"
+        return fetch (`http://localhost:8088/products/${ProductId}`, {
+        method: "DELETE"
         })
         .then(getProducts)
     }

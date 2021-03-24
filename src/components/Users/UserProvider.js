@@ -5,6 +5,7 @@ export const UserContext = createContext()
 export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
     const [userMenus, setUserMenus] = useState([])
+    const [groceryForms, setGroceryForms] = useState([])
 
     const getUsers = () => {
         return fetch ("http://localhost:8088/users")
@@ -18,6 +19,12 @@ export const UserProvider = (props) => {
         .then(setUserMenus)
     }
 
+    const getGroceryForms = () => {
+        return fetch ("http://localhost:8088/products?_expand=groceryMenu&_expand=location")
+        .then(res => res.json())
+        .then(setGroceryForms)
+    }
+
 //     const addUserMenus = () => {
 //         return fetch ("http://localhost:8088/products?_expand=groceryMenu"), {
 //                 method: "POST",
@@ -29,7 +36,7 @@ export const UserProvider = (props) => {
 //             .then(getProducts)
     return (
         <UserContext.Provider value={{
-            users, getUsers, userMenus, getUserMenus
+            users, getUsers, userMenus, getUserMenus, groceryForms, getGroceryForms
         }}>
             {props.children}
         </UserContext.Provider>

@@ -1,48 +1,29 @@
-import React, { useContext, useEffect, useState } from "react"
+import {useHistory } from "react-router-dom"
 import { ProductContext } from "../Grocery/GroceryProvider"
-// import "./Grocery.css"
-import { useParams, useHistory } from "react-router-dom"
+import {useContext} from "react"
 
-export const UserCardMenus = () => {
-  const { getProductById, deleteProduct, updateProduct } = useContext(ProductContext)
+export const UserMenuCard = ({ userForm }) => {
+    const { deleteProduct } = useContext(ProductContext)
 
-  // console.log("curious", product)
-	const [product, setProduct] = useState({})
-
-	const {productId} = useParams();
-
-	const history = useHistory();
-
-  useEffect(() => {
-    // console.log("useEffect", productId)
-    getProductById(productId)
-    .then((response) => {
-      setProduct(response)
-    })
-    }, [])
+    const history = useHistory();
 
     const handleRelease = () => {
-        deleteProduct(product.id)
+        deleteProduct(userForm.id)
         .then(() => {
             history.push("/groceries")
         })
     }
-
-
-  return (
-    <section className="grocery">
-      <h3 className="grocery__location">Location: {product.locationId}</h3>
-        console.log()
-      <div classname="userOrders">
-      <div className="groceryWeek">{product.title}</div>
-      <div className="groceryMessage">Location: {product.message}</div>
-
-      <div>
-      <button className="deleteGroceryButton" onclick={handleRelease}>Delete</button>
-      <button className="editGroceryButton" onclick={() => { history.push(`/groceries/edit/${product.id}`)}}>Edit</button>
+    <div>
+      <button className="editGroceryButton" onclick={() => { history.push(`/groceries/edit/${userForm.id}`)}}>Edit</button>
       </div>
-      
-     </div>
-    </section>
-  )
+    
+    return(
+        <>
+        <div>Week: {userForm.groceryMenu.title}</div>
+        <div>Location: {userForm.location.name}</div>
+        <div>Message: {userForm.message}</div>
+
+        <button className="deleteGroceryButton" onclick={handleRelease}>Delete</button>
+    </>
+    )
 }

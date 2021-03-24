@@ -1,18 +1,18 @@
 import React, { useContext, useEffect } from "react"
 import { UserContext } from "./UserProvider"
-import { UserCardMenus} from "./UserMenuCard"
+import { UserMenuCard} from "./UserMenuCard"
 import { ProductContext} from "../Grocery/GroceryProvider"
 import "./User.css"
 
 export const UserList = () => {
   
-    const {getUserMenus, userMenus } = useContext(UserContext)
+    const {groceryForms, getGroceryForms } = useContext(UserContext)
 
    
 
         
         useEffect(() => {
-            getUserMenus()
+            getGroceryForms()
 
         }, [])
         
@@ -22,7 +22,9 @@ export const UserList = () => {
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
     // const userOrder = products.filter(user => currentUserId === user.Id)
- 
+        const userForms = groceryForms.filter(gf => currentUserId === gf.userId)
+
+        console.log(userForms)
   
     return (
         <>
@@ -36,9 +38,9 @@ export const UserList = () => {
   
 
         {
-          userMenus.map(user => {
-              console.log(user)
-              return <UserCardMenus key={user.id} userMenu={user} />
+          userForms.map(form => {
+            
+              return <UserMenuCard key={form.id} userForm={form} />
           })
         }
       </div>
