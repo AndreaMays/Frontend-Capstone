@@ -1,19 +1,20 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ProductContext } from "./GroceryProvider"
-import "./Grocery.css"
+import { ProductContext } from "../Grocery/GroceryProvider"
+// import "./Grocery.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const GroceryDetail = () => {
   const { getProductById, deleteProduct, updateProduct } = useContext(ProductContext)
 
-  console.log("curious", product)
+  // console.log("curious", product)
 	const [product, setProduct] = useState({})
 
 	const {productId} = useParams();
+
 	const history = useHistory();
 
   useEffect(() => {
-    console.log("useEffect", productId)
+    // console.log("useEffect", productId)
     getProductById(productId)
     .then((response) => {
       setProduct(response)
@@ -30,7 +31,7 @@ export const GroceryDetail = () => {
 
   return (
     <section className="grocery">
-      <h3 className="grocery__location">{product.locationId}</h3>
+      <h3 className="grocery__location">Location: {product.locationId}</h3>
         console.log()
       <div classname="userOrders">
       <div className="groceryWeek">{product.title}</div>

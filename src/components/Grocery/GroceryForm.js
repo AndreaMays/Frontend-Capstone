@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from"../Location/LocationProvider"
 import { ProductContext } from "./GroceryProvider"
+import { UserContext} from "../Users/UserProvider"
 import { useHistory, useParams } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import "./Grocery.css"
@@ -9,19 +10,20 @@ import {Form} from "react-bootstrap"
 export const GroceryForm = () => {
     const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
+    const { users, getUsers} = useContext(UserContext)
     
        // const {users, getUsers} = useContext(UserContext)
-       console.log("whatsThis", products)
+    //    console.log("hungry", groceryMenus)
 
-    const currentUserId = parseInt(sessionStorage.getItem("arcc_user"))
+    const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
     const [grocery, setGrocery] = useState({
-        userId: currentUserId,
-        locationId: 0,
-        message: "",
-        isReceived: "",
-        groceryMenuId: "" ,
-        id: ""
+        // userId: currentUserId,
+        // locationId: 0,
+        // message: "",
+        // isReceived: "",
+        // groceryMenuId: 0
+        
     });
 
      useEffect(() => {
@@ -33,13 +35,13 @@ export const GroceryForm = () => {
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
+        // console.log(event.target)
         const newGrocery = {...grocery}
-        newGrocery.timeStamp = Date.now()
         let selectedVal = event.target.value
 
-        if (event.target.id.includes("id")) {
-            selectedVal = parseInt(selectedVal)
-        }
+        
+        // selectedVal = parseInt(selectedVal)
+        
         
         newGrocery[event.target.id] = selectedVal
         setGrocery(newGrocery)
@@ -54,13 +56,20 @@ export const GroceryForm = () => {
             if (grocery.userID === currentUserId) {
                 updateProduct({
                     userId: currentUserId,
-                    groceryMenuId: products.groceryMenuId,
-                    locationId: products.locationId,
-                    message: products.message,
+                    groceryMenuId: parseInt(grocery.groceryMenuId),
+                    locationId: parseInt(grocery.locationId),
+                    message: grocery.message,
+                    isReceived: false
                 })
             .then(() => history.push(`/groceries`)) 
            } else {
-            addProduct({grocery})
+            addProduct({
+                    userId: currentUserId,
+                    groceryMenuId: parseInt(grocery.groceryMenuId),
+                    locationId: parseInt(grocery.locationId),
+                    message: grocery.message,
+                    isReceived: false
+            })
             .then(() => history.push("/groceries"))
             }
         }
@@ -88,7 +97,7 @@ export const GroceryForm = () => {
             <fieldset>
             <div className="form-group">
                 <label htmlFor="groceryMenuId">Grocery Week: </label>
-                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} required autofocus className="form-control" >
+                <select value={products.groceryMenuId} name="groceryMenu" id="groceryId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
                     <option value="0">Select a Week</option>
                     {groceryMenus.map(gm => (                                             
                         <option key={gm.id} value={gm.id}>

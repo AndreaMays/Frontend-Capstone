@@ -26,73 +26,73 @@
       "password": "phoebe",
       "isAdmin": false,
       "id": 4
+    },
+    {
+      "email": "monicaG@amail.a",
+      "name": "Monica  Gellar",
+      "address": "500 Friends Drive undefined undefined undefined",
+      "phone": "555-555-5555",
+      "password": "monicaG",
+      "isAdmin": false,
+      "id": 5
     }
   ],
   "products": [
     {
       "userId": 1,
-      "isReceived": "false",
-      "locationId": 4,
       "groceryMenuId": 1,
-      "message": "pb allergy",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "isReceived": "false",
-      "locationId": 4,
-      "groceryMenuId": 1,
-      "message": "shopping",
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
+      "locationId": 3,
+      "message": "round 2",
+      "isReceived": false,
       "id": 5
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "1",
-        "message": "",
-        "isReceived": "",
-        "groceryMenuId": 0,
-        "timeStamp": 1616467627759,
-        "groceryId": "1",
-        "textArea": "Please work"
-      },
+      "userId": 1,
+      "groceryMenuId": 4,
+      "locationId": 1,
+      "message": "null",
+      "isReceived": false,
       "id": 6
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "2",
-        "message": "",
-        "isReceived": "",
-        "groceryMenuId": "",
-        "id": "",
-        "timeStamp": 1616468017436,
-        "groceryId": "4",
-        "textArea": "allergic to everything"
-      },
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "hope",
+      "isReceived": false,
       "id": 7
     },
     {
-      "grocery": {
-        "userId": null,
-        "locationId": "2",
-        "message": "i think you're working tonight :-)!!!!",
-        "isReceived": "",
-        "groceryMenuId": "",
-        "id": "",
-        "timeStamp": 1616468140442,
-        "groceryId": "1"
-      },
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "Week only",
+      "isReceived": false,
       "id": 8
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 1,
+      "locationId": 4,
+      "message": "Will this appear to the userOrders",
+      "isReceived": false,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 4,
+      "locationId": 2,
+      "message": "radklfja",
+      "isReceived": false,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 2,
+      "message": "PLEASE  WORK",
+      "isReceived": false,
+      "id": 11
     }
   ],
   "groceryMenus": [

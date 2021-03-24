@@ -1,5 +1,6 @@
-import React, {useState, createContext } from "react"
-import { GroceryCard } from "./GroceryCard"
+import React, {useState, createContext, useContext } from "react"
+import {UserContext} from "../Users/UserProvider"
+
 
 export const EventContext = createContext()
 export const ProductContext = createContext()
@@ -9,6 +10,8 @@ export const ProductProvider = (props) => {
     const [groceryMenus, setGroceryMenus] = useState([])
     const [groceryMenuProducts, setGroceryMenuProducts] = useState([])
     const [groceries, setGroceries] = useState([])
+
+   
 
     // console.log("Hungry", getGroceries)
     // NOTE: line 11 -15 function is used in the GroceryList.js. We get groceries from db.json, return what we get, 
@@ -32,10 +35,10 @@ export const ProductProvider = (props) => {
     }
 
     const deleteProduct = ProductId => {
-        return fetch (`http://localhost:8088/products/${ProductId}`,{
-            method: "DELETE"
+        return fetch (`http://localhost:8088/products/${ProductId}`, {
+        method: "DELETE"
         })
-        .then(getProducts)
+        // .then(getGroceryForms)
     }
 
     const updateProduct = productObj => {
@@ -50,7 +53,7 @@ export const ProductProvider = (props) => {
     }
 
     const getProductById = (id) => {
-        return fetch(`http://localhost:8088/products${id}`)
+        return fetch(`http://localhost:8088/products/${id}`)
         .then(res => res.json())
     }
 // GET JOIN TABLE GROCERIES AND MENU BELOW
