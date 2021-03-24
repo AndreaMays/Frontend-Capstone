@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { UserContext } from "./UserProvider"
 import { UserMenuCard} from "./UserMenuCard"
-import { ProductContext} from "../Grocery/GroceryProvider"
 import "./User.css"
 
 export const UserList = () => {

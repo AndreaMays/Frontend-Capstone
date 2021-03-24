@@ -1,21 +1,23 @@
 import {useHistory } from "react-router-dom"
 import { ProductContext } from "../Grocery/GroceryProvider"
 import {useContext} from "react"
+import React, {useEffect, useState, useParams } from "react"
+
 
 export const UserMenuCard = ({ userForm }) => {
-    const { deleteProduct } = useContext(ProductContext)
+    const { deleteProduct, getProductById } = useContext(ProductContext)
+  
 
     const history = useHistory();
 
-    const handleRelease = () => {
+    
+
+       const handleRelease = () => {
         deleteProduct(userForm.id)
         .then(() => {
-            history.push("/groceries")
+            history.push("/orders")
         })
     }
-    <div>
-      <button className="editGroceryButton" onclick={() => { history.push(`/groceries/edit/${userForm.id}`)}}>Edit</button>
-      </div>
     
     return(
         <>
@@ -23,7 +25,10 @@ export const UserMenuCard = ({ userForm }) => {
         <div>Location: {userForm.location.name}</div>
         <div>Message: {userForm.message}</div>
 
-        <button className="deleteGroceryButton" onclick={handleRelease}>Delete</button>
+    <div>
+      <button className="editGroceryButton" onclick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</button>
+        <button className="deleteGroceryButton" onclick={() => deleteProduct(userForm.Id)}>Delete</button>
+      </div>
     </>
     )
 }

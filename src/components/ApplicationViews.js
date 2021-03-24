@@ -32,22 +32,22 @@ export const ApplicationViews = () => {
                 <Route path="/groceries/create">
                     <GroceryForm />
                 </Route>
-                < Route path="/groceries/edit/:groceriesId(\d+)">
+                < Route path="/orders/edit/:groceriesId(\d+)">
                     <GroceryForm/>
                 </Route>
                 <Route path="/groceries/details/${product.id}">
                     <GroceryDetail/> 
                 </Route>
-            </UserProvider>
-        </LocationProvider>
-    </ProductProvider>
-
-            
              <Route exact path="/orders">
                 <UserProvider>
                     <UserList />
                 </UserProvider>
             </Route>
+            </UserProvider>
+        </LocationProvider>
+    </ProductProvider>
+
+            
 
       
 
