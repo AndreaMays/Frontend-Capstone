@@ -3,8 +3,8 @@ import { CardDeck } from "react-bootstrap"
 import React from "react"
 
 
-
-// line 6 is passing one "product" from the iteration of line 24-26. Line 6 "product" has to be the same variable name from where its coming from (i.e. groceryList linr 24-26)
+// "menu" on line 8 is passing in the items returned from the conditional 
+// on the weeklyMenuCard that is pulling all groceryMenu and productItems
 
 export const GroceryCard = ({ menu }) => (
   

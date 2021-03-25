@@ -8,31 +8,23 @@ import {useEffect} from "react"
 export const WeeklyMenuCard = ({week}) => {
     const {groceryMenuProducts, getProducts, products} = useContext(ProductContext)
 
-    // history = useHistory()
-
-    // useEffect(() => {
-    //     console.log("useEffect", product)
-    //     getProducts()
-    //    }, [])
-
+    //"groceryMenuProducts" (above) is being called from the expand fetch call on getGroceryMenuProductItems which
+    // is getting the join table, the groceryMenu and the Product Item.
+// "product" on line 19 is passing in the conditional that is pulling all groceryMenu and productItems
     return (
         <CardDeck>
             <Card>
                 <Card.Body>
                     <Card.Title> {week.title} </Card.Title>
                     { groceryMenuProducts.map(product => {
-                        // console.log("HELP",groceryMenuProducts)
+                        console.log("HELP",product)
                         if(product.groceryMenuId === week.id) {
                             // console.log("hungry",product)
                             return <GroceryCard key={product.id} menu={product}></GroceryCard>
                         }
                     })
                 }
-                
-                {/* <button className="editGroceryButton" onclick={() => { history.push(`/groceries/details/${product.id}`)}}>Edit</button>
-                {products.find(productId => {(groceryMenuId === groceryMenu.id)
-                console.log(productId)
-                ) */}
+
             
                 </Card.Body>
 
