@@ -8,12 +8,15 @@ import "./Grocery.css"
 import {Form} from "react-bootstrap"
 
 export const GroceryForm = () => {
-    const {addProduct, getProducts, products, groceryMenus, getProductById, updateProduct, getAllGroceryMenus} = useContext(ProductContext)
+    const {addProduct, getProducts, groceryMenus, getProductById, updateProduct, getAllGroceryMenus} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { users, getUsers} = useContext(UserContext)
 
     const [isLoading, setIsLoading] = useState(true)
+
+    // useParam is a hook. its taking the application view line 35 "productId" on the back of the url path route
     const { productId } = useParams();
+
     const history = useHistory()
     
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
@@ -24,7 +27,6 @@ export const GroceryForm = () => {
         message: "",
         isReceived: "",
         groceryMenuId: 0
-        
     });
 
      useEffect(() => {
@@ -45,35 +47,39 @@ export const GroceryForm = () => {
         let selectedVal = event.target.value
 
         
-        // selectedVal = parseInt(selectedVal)
+        
         
         
         newGrocery[event.target.id] = selectedVal
         setGrocery(newGrocery)
     }
 
+    // line 64 is saying to use the "productId" from "useParams" and the "userId" is equal to the current user Id update the product
+    // otherwise go to adding the product if those Id's are not there add product. ProductId is the key because there can 
+    // only be a productId on something that's already there and needs to be updated. 
     const handleClickSaveEditForm = () => {
-        const locationId = products.userId
-        if(locationId === 0) {
+        if(grocery.locationId === 0) {
             window.alert("Please select a pickup/dropOff location")
         } else {
             setIsLoading(true);
-            if (grocery.userID === currentUserId) {
+            // console.log(grocery.id)
+            if (productId && grocery.userId === currentUserId) {
                 updateProduct({
                     userId: currentUserId,
                     groceryMenuId: parseInt(grocery.groceryMenuId),
                     locationId: parseInt(grocery.locationId),
                     message: grocery.message,
-                    isReceived: false
+                    isReceived: false,
+                    id: productId
                 })
-            .then(() => history.push(`/groceries`)) 
+            .then(() => history.push(`/orders`)) 
            } else {
             addProduct({
                     userId: currentUserId,
                     groceryMenuId: parseInt(grocery.groceryMenuId),
                     locationId: parseInt(grocery.locationId),
                     message: grocery.message,
-                    isReceived: false
+                    isReceived: false,
             })
             .then(() => history.push("/groceries"))
             }
@@ -136,7 +142,7 @@ export const GroceryForm = () => {
             <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
                 event.preventDefault()
                 handleClickSaveEditForm()}}> 
-                {productId ? "Add Grocery" : "Save Grocery"}
+                {productId ? "Save Grocery" : "Add Grocery" }
               </button>
 </form>
 
