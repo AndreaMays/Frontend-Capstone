@@ -32,8 +32,9 @@ export const UserList = () => {
         <h2>User Menu Order</h2>
     
              
-        <p>Please review your orders. Click the Details button to be taken to your previous grocery orders, where your
-            can "edit" or "delete" your order if needed.
+        <p>Please review your orders. Click the edit button to be taken to your previous grocery order, where your
+            can edit your location, week, or add a message for the admin. You can also delete your order if it is not 
+            needed anymore.
         </p>   
   
 
