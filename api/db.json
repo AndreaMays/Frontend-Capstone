@@ -205,6 +205,14 @@
       "message": "I'm allergic to frogs AND flies... RIBBIT",
       "isReceived": false,
       "id": 30
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 1,
+      "message": "CANY YOU HEAR ME? RIBBIT\nYES I CAN!!!",
+      "isReceived": false,
+      "id": 31
     }
   ],
   "groceryMenus": [
