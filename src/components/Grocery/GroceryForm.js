@@ -42,7 +42,7 @@ export const GroceryForm = () => {
 
 
     const handleControlledInputChange = (event) => {
-        console.log(event.target.id)
+        // console.log(event.target.id)
         const newGrocery = {...grocery}
         let selectedVal = event.target.value
 
@@ -81,7 +81,7 @@ export const GroceryForm = () => {
                     message: grocery.message,
                     isReceived: false,
             })
-            .then(() => history.push("/groceries"))
+            .then(() => history.push("/orders"))
             }
         }
     }
