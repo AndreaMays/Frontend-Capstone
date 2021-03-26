@@ -15,15 +15,13 @@ export const UserList = () => {
 
         }, [])
         
-    // console.log(groceryMenus)
 
-    // console.log(userMenus)
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
     // const userOrder = products.filter(user => currentUserId === user.Id)
     const userForms = groceryForms.filter(gf => currentUserId === gf.userId)
     
-    console.log(userForms)
+ 
     
   
     return (

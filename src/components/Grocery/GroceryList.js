@@ -28,9 +28,9 @@ export const GroceryList = () => {
         <div className="groceries">
         <h2>Grocery List and Registration</h2>
 
-        <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
-              "Add Grocery"
-            </button>
+        {/* <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
+              "Sign up for grocery Week"
+            </button> */}
         
         {/* <Button variant="primary" className="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button> */}
         

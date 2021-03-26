@@ -9,13 +9,12 @@ import React from "react"
 export const GroceryCard = ({ menu }) => (
   
   <>
+
+  
   
 <CardDeck>
-   <Card className="groceryCard" style={{ width: '18rem'}}>
-    {/* <Card.Img variant="bottom" src={menu.image} 
-    width={200}
-    height={200}
-    alt="171x180"/>  */}
+   <Card className="groceryCard" style={{ width: '20rem'}}>
+   
     <Card.Body>
       <Card.Title></Card.Title>
      
@@ -35,4 +34,3 @@ export const GroceryCard = ({ menu }) => (
 
 
 
-// variant="bottom"
