@@ -1,10 +1,9 @@
 import {useHistory } from "react-router-dom"
 import { ProductContext } from "../Grocery/GroceryProvider"
 import {useContext} from "react"
-import React, {useEffect, useState, useParams } from "react"
+import React from "react"
 import {UserContext} from "./UserProvider"
-import { Card } from "react-bootstrap"
-import { CardDeck } from "react-bootstrap"
+import { Card, CardDeck, ListGroup, ListGroupItem, Button } from "react-bootstrap"
 import "./User.css"
 
 export const UserMenuCard = ({ userForm }) => {
@@ -27,31 +26,27 @@ export const UserMenuCard = ({ userForm }) => {
     return(
         <>
 
+<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={userForm.groceryMenu.image} />
+  <Card.Body>
+    <Card.Title>Your Recent Order</Card.Title>
+    <Card.Text>
+    </Card.Text>
+  </Card.Body>
 
-  <CardDeck>
-   <Card className="userCard" style={{ width: '20rem'}}>
-      <Card.Body>
-      <Card.Title></Card.Title>
-      
-      
-      <Card.Text>
-      <div className="card">
-        <div class="card-body">Week: {userForm.groceryMenu.title}</div>
-        <div class="card-body">Location: {userForm.location.name}</div>
-        <div class="card-body">Message: {userForm.message}</div>
+  <ListGroup className="list-group-flush">
+    <ListGroupItem>Week: {userForm.groceryMenu.title}</ListGroupItem>
+    <ListGroupItem>Location: {userForm.location.name}</ListGroupItem>
+    <ListGroupItem>Message: {userForm.message}</ListGroupItem>
+  </ListGroup>
 
-        <div>
-          <button className="editGroceryButton" onClick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</button>
-            <button className="deleteGroceryButton" onClick={handleRelease}>Delete</button>
-        </div>
+  <Card.Body>
+    <Button variant="info" onClick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</Button>{' '}
+    <Button variant="danger" onClick={handleRelease}>Delete</Button> 
+  </Card.Body>
+</Card>
 
-        </div>
-
-      </Card.Text>
-    </Card.Body>
-  </Card>
-
-</CardDeck>  
+ 
     </>
     )
 }
