@@ -1,16 +1,22 @@
 import React from "react"
 // import {PropsandState} from './PropsAndState'
 import "./Home.css"
-import {Jumbotron, Container, Row, Image, Col} from "react-bootstrap"
+import {Jumbotron, Card, Row, Image, Col} from "react-bootstrap"
 
 export const Home = () => (
     <>
-    <Jumbotron>
-  <h1 class="home">Welcome to A.R.C.C</h1>
-  <p>
-    This is a simple hero unit, a simple jumbotron-style component for calling
-    extra attention to featured content or information.
-  </p> 
-</Jumbotron>
+ 
+
+<Card className="bg-dark text-white">
+  <Card.Img class="homeImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfgpJ5CP8Rrn0P-Yr3LqsZRFCi003uPg5Jtg&usqp=CAU" alt="Card image" />
+  <Card.ImgOverlay>
+    <Card.Title class="homeWelcome">Welcome to A.R.C.C.</Card.Title>
+    <Card.Text class="homeText">
+    This is a webiste to connect resources to the South Nashville Community.
+    </Card.Text>
+    <Card.Text></Card.Text>
+  </Card.ImgOverlay>
+</Card>
+
 </>
 )

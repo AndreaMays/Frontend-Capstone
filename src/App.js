@@ -5,7 +5,10 @@ import { userStorageKey } from "./components/auth/authSettings"
 import {ApplicationViews} from "./components/ApplicationViews"
 import { NavBar } from "./components/nav/navBar"
 
+
 export const App = () => ( 
+
+  
   <> 
    <Route render={() => {
         if (sessionStorage.getItem(userStorageKey)) {
@@ -29,6 +32,7 @@ export const App = () => (
     </Route>
     </>
 )
+
 
 // function App() {
 //   return (
