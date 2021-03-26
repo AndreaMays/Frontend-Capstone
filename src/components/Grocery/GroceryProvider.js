@@ -1,7 +1,7 @@
 import React, {useState, createContext, useContext } from "react"
 import {UserContext} from "../Users/UserProvider"
 
-
+// this provider is performing all the fetch calls for grocery/products
 export const EventContext = createContext()
 export const ProductContext = createContext()
 
@@ -38,7 +38,7 @@ export const ProductProvider = (props) => {
         return fetch (`http://localhost:8088/products/${ProductId}`, {
         method: "DELETE"
         })
-        // .then(getGroceryForms)
+        
     }
 
     const updateProduct = productObj => {
