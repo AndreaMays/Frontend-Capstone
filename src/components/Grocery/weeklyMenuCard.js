@@ -1,4 +1,4 @@
-import { Card, CardDeck, Accordion, Button } from "react-bootstrap"
+import { Card, Accordion, Button } from "react-bootstrap"
 import { ProductContext } from "./GroceryProvider"
 import {GroceryCard} from "./GroceryCard"
 import React, {useContext} from 'react'
@@ -7,7 +7,7 @@ import { useHistory } from "react-router"
 
 
 export const WeeklyMenuCard = ({week}) => {
-    const {groceryMenuProducts, getProducts, products} = useContext(ProductContext)
+    const {groceryMenuProducts} = useContext(ProductContext)
 
     const history = useHistory()
 

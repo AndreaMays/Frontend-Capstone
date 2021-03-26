@@ -7,7 +7,8 @@ import {UserProvider} from "./Users/UserProvider"
 import {UserList} from "./Users/UserList"
 import {GroceryDetail} from "./Grocery/GroceryDetails"
 import {LocationProvider} from "./Location/LocationProvider"
-import {LocationList} from "./Location/LocationList"
+import {ChildProvider} from "./Children/ChildProvider"
+import {ChildrenList} from "./Children/ChildList"
 import { Home } from "./Home"
 import { About } from "./About"
 
@@ -25,6 +26,7 @@ export const ApplicationViews = () => {
     <ProductProvider>
         <LocationProvider>
             <UserProvider>
+                <ChildProvider>
            <Route exact path="/groceries">
             <GroceryList/>
 
@@ -43,6 +45,12 @@ export const ApplicationViews = () => {
                     <UserList />
                 </UserProvider>
             </Route>
+             <Route exact path="/children">
+                <ChildProvider>
+                    <ChildrenList />
+                </ChildProvider>
+            </Route>
+                </ChildProvider>
             </UserProvider>
         </LocationProvider>
     </ProductProvider>

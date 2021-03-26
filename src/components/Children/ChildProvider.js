@@ -1,14 +1,14 @@
-import React, {useState, createContext, useContext } from "react"
+import React, {useState, createContext} from "react"
 
 export const ChildContext = createContext()
 
 export const ChildProvider = (props) => {
-    const [childForms, setChildForms]
+    const [childForms, setChildForms] = useState([])
 
 
-    const getChildForms= () => {
-        return fetch ("http://locallhost:8088/children")
-        .then(res => res.json)
+    const getChildForms = () => {
+        return fetch ("http://localhost:8088/children")
+        .then(res => res.json())
         .then(setChildForms)
     }
 
