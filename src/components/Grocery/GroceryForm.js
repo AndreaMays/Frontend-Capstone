@@ -103,49 +103,90 @@ export const GroceryForm = () => {
     }, [])
 
      return (
-        <form className="groceryForm">
-             <h2 className="groceryForm__title">{productId ? "Edit Grocery Form" : "Add Grocery Form"}</h2>
 
-            <fieldset>
-            <div className="form-group">
-                <label htmlFor="groceryMenuId">Grocery Week: </label>
-                <select value={grocery.groceryMenuId} name="groceryMenu" id="groceryMenuId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
-                    <option value="0">Select a Week</option>
-                    {groceryMenus.map(gm => (                                             
+<Form>
+
+<h2 className="groceryForm__title">{productId ? "Edit Grocery Form" : "Add Grocery Form"}</h2>
+
+  <Form.Group controlId="exampleForm.ControlSelect1">
+    <Form.Label>Select A Grocery Week</Form.Label>
+    <Form.Control as="select" value={grocery.groceryMenuId} name="groceryMenu" id="groceryMenuId" onChange={handleControlledInputChange} required autoFocus className="form-control">
+                 <option value="0">Select a Week</option>
+                     {groceryMenus.map(gm => (                                             
                         <option key={gm.id} value={gm.id}>
                             {gm.title}
-                        </option>
-                    ))}
-                </select>
-                </div>
-            </fieldset>
+                            </option>
+                    ))}  
+    </Form.Control>
 
-            <fieldset>
-            <div className="form-group">
-                <label htmlFor="LocationId">Location: </label>
-                <select value={grocery.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Select location">
-                    <option value="0">Select a Location</option>
-                    {locations.map(location => (
+<br></br>
+    <Form.Label>Select a location to pickup groceries or have groceries dropped off</Form.Label>
+    <Form.Control as="select" value={grocery.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Select location">
+                 <option value="0">Select A Location</option>
+                 {locations.map(location => (
                         <option key={location.id} value={location.id}>
                             {location.name}
                         </option>
                     ))}
-                </select>
-            </div>
-        </fieldset>
-
-        <fieldset>
-                <div className="form-group">
-                    <label htmlFor="message">Allergy Text Message</label>
-                    <textarea type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
-                </div>
-        </fieldset>
-            <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
+    </Form.Control>
+  </Form.Group>
+  
+  <Form.Group controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Example textarea</Form.Label>
+    <Form.Control as="textarea" rows={3} type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
+    <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
                 event.preventDefault()
                 handleClickSaveEditForm()}}> 
-                {productId ? "Save Grocery" : "Add Grocery" }
+                {productId ? "Save Grocery Week" : "Add Grocery Week" }
               </button>
-</form>
+  </Form.Group>
+</Form>
+
+
+//         <form className="groceryForm">
+//              <h2 className="groceryForm__title">{productId ? "Edit Grocery Form" : "Add Grocery Form"}</h2>
+
+//             <fieldset>
+//             <div className="form-group">
+//                 <label htmlFor="groceryMenuId">Grocery Week: </label>
+//                 <select value={grocery.groceryMenuId} name="groceryMenu" id="groceryMenuId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
+//                     <option value="0">Select a Week</option>
+//                     {groceryMenus.map(gm => (                                             
+//                         <option key={gm.id} value={gm.id}>
+//                             {gm.title}
+//                         </option>
+//                     ))}
+//                 </select>
+//                 </div>
+//             </fieldset>
+
+//             <fieldset>
+//             <div className="form-group">
+//                 <label htmlFor="LocationId">Location: </label>
+                
+//                 <select value={grocery.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Select location">
+//                     <option value="0">Select a Location</option>
+//                     {locations.map(location => (
+//                         <option key={location.id} value={location.id}>
+//                             {location.name}
+//                         </option>
+//                     ))}
+//                 </select>
+//             </div>
+//         </fieldset>
+
+//         <fieldset>
+//                 <div className="form-group">
+//                     <label htmlFor="message">Allergy Text Message</label>
+//                     <textarea type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
+//                 </div>
+//         </fieldset>
+//             <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
+//                 event.preventDefault()
+//                 handleClickSaveEditForm()}}> 
+//                 {productId ? "Save Grocery" : "Add Grocery" }
+//               </button>
+// </form>
 
 )
 }

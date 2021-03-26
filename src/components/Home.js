@@ -6,7 +6,7 @@ import {Jumbotron, Container, Row, Image, Col} from "react-bootstrap"
 export const Home = () => (
     <>
     <Jumbotron>
-  <h1>Welcome to A.R.C.C</h1>
+  <h1 class="home">Welcome to A.R.C.C</h1>
   <p>
     This is a simple hero unit, a simple jumbotron-style component for calling
     extra attention to featured content or information.

@@ -16,33 +16,31 @@ export const WeeklyMenuCard = ({week}) => {
 // "product" on line 19 is passing in the conditional that is pulling all groceryMenu and productItems
 
     return (
-
-<Accordion defaultActiveKey="0">
-  <Card>
-    <Card.Header>
-        <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
+<Accordion>
+<Card>
+  <Card.Header>
+  <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
               "Sign up for grocery Week"
         </button>
-      <Accordion.Toggle as={Button} variant="link" eventKey="0">
-        <br></br>
-        {week.title}
-      </Accordion.Toggle>
-    </Card.Header>
-    <Accordion.Collapse eventKey="0">
-      <Card.Body>               { groceryMenuProducts.map(product => {
+    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+    {week.title}
+    </Accordion.Toggle>
+  </Card.Header>
+  <Accordion.Collapse eventKey="0">
+    <Card.Body>
+    { groceryMenuProducts.map(product => {
                         // console.log("HELP",product)
                         if(product.groceryMenuId === week.id) {
                             // console.log("hungry",product)
                             return <GroceryCard key={product.id} menu={product}></GroceryCard>
                         }
                     })
-                }</Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  </Accordion>
-
-
-       )
+                }
+    </Card.Body>
+  </Accordion.Collapse>
+</Card>
+</Accordion>
+    )
 }
 
 // from GroceryList line 47 - 51 we mapped throught the groceryMenus, returning this "weeklyMenuCard". It was passed
