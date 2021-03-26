@@ -5,6 +5,7 @@ import React, {useEffect, useState, useParams } from "react"
 import {UserContext} from "./UserProvider"
 import { Card } from "react-bootstrap"
 import { CardDeck } from "react-bootstrap"
+import "./User.css"
 
 export const UserMenuCard = ({ userForm }) => {
     const { deleteProduct, getProductById } = useContext(ProductContext)
@@ -25,20 +26,25 @@ export const UserMenuCard = ({ userForm }) => {
     
     return(
         <>
+
+
   <CardDeck>
-   <Card className="groceryCard" style={{ width: '18rem'}}>
+   <Card className="userCard" style={{ width: '20rem'}}>
       <Card.Body>
       <Card.Title></Card.Title>
-     
+      
       
       <Card.Text>
-        <div>Week: {userForm.groceryMenu.title}</div>
-        <div>Location: {userForm.location.name}</div>
-        <div>Message: {userForm.message}</div>
+      <div className="card">
+        <div class="card-body">Week: {userForm.groceryMenu.title}</div>
+        <div class="card-body">Location: {userForm.location.name}</div>
+        <div class="card-body">Message: {userForm.message}</div>
 
         <div>
           <button className="editGroceryButton" onClick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</button>
             <button className="deleteGroceryButton" onClick={handleRelease}>Delete</button>
+        </div>
+
         </div>
 
       </Card.Text>

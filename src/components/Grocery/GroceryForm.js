@@ -86,6 +86,7 @@ export const GroceryForm = () => {
         }
     }
 
+    // below useEffect
     useEffect(() => {
         getProducts().then(() => {
             if (productId) {

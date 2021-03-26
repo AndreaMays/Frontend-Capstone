@@ -35,6 +35,15 @@
       "password": "monicaG",
       "isAdmin": false,
       "id": 5
+    },
+    {
+      "email": "andrea@amail.com",
+      "name": "andrea nichole",
+      "address": "alkjflkfdaf undefined undefined undefined",
+      "phone": "55555555",
+      "password": "andrea",
+      "isAdmin": false,
+      "id": 6
     }
   ],
   "products": [
@@ -192,8 +201,8 @@
     },
     {
       "userId": 4,
-      "groceryMenuId": 1,
-      "locationId": 1,
+      "groceryMenuId": 3,
+      "locationId": 3,
       "message": "Phoebe's order",
       "isReceived": false,
       "id": 29
@@ -205,6 +214,14 @@
       "message": "I'm allergic to frogs AND flies... RIBBIT",
       "isReceived": false,
       "id": 30
+    },
+    {
+      "userId": 6,
+      "groceryMenuId": 3,
+      "locationId": 2,
+      "message": "tomatoes",
+      "isReceived": false,
+      "id": 31
     }
   ],
   "groceryMenus": [

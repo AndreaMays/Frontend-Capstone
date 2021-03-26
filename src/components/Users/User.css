@@ -1,0 +1,7 @@
+.card {
+    display: flex;
+    flex-basis: 80%;
+    margin: 1em;
+    border: solid 2px blue;
+    
+}

@@ -1,36 +1,48 @@
-import { Card, CardDeck } from "react-bootstrap"
+import { Card, CardDeck, Accordion, Button } from "react-bootstrap"
 import { ProductContext } from "./GroceryProvider"
 import {GroceryCard} from "./GroceryCard"
 import React, {useContext} from 'react'
 import {useEffect} from "react"
+import { useHistory } from "react-router"
 
 
 export const WeeklyMenuCard = ({week}) => {
     const {groceryMenuProducts, getProducts, products} = useContext(ProductContext)
 
+    const history = useHistory()
+
     //"groceryMenuProducts" (above) is being called from the expand fetch call on getGroceryMenuProductItems which
     // is getting the join table, the groceryMenu and the Product Item.
 // "product" on line 19 is passing in the conditional that is pulling all groceryMenu and productItems
+
     return (
-        <CardDeck>
-            <Card>
-                <Card.Body>
-                    <Card.Title> {week.title} </Card.Title>
-                    { groceryMenuProducts.map(product => {
-                        console.log("HELP",product)
+
+<Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+        <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
+              "Sign up for grocery Week"
+        </button>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        <br></br>
+        {week.title}
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>               { groceryMenuProducts.map(product => {
+                        // console.log("HELP",product)
                         if(product.groceryMenuId === week.id) {
                             // console.log("hungry",product)
                             return <GroceryCard key={product.id} menu={product}></GroceryCard>
                         }
                     })
-                }
+                }</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  </Accordion>
 
-            
-                </Card.Body>
 
-            </Card>
-        </CardDeck>
-    )
+       )
 }
 
 // from GroceryList line 47 - 51 we mapped throught the groceryMenus, returning this "weeklyMenuCard". It was passed
