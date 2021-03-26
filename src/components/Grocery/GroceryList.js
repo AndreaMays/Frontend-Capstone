@@ -10,10 +10,7 @@ import { WeeklyMenuCard } from "./weeklyMenuCard"
 export const GroceryList = () => {
     const { products, getProducts, groceryMenus, getAllGroceryMenus, getGroceryMenuProdItem, 
         getGroceries, groceryMenuProducts, groceries } = useContext(ProductContext)
-    const history = useHistory()
-
-    // console.log(groceryMenuProducts)
-
+    
       useEffect(() => {
         getProducts()
         getAllGroceryMenus()
@@ -21,16 +18,12 @@ export const GroceryList = () => {
         getGroceries()
     }, [])
     
-
-    // console.log(groceryMenuProducts)
+ 
     return (
         <>
         <div className="groceries">
         <h2>Grocery List and Registration</h2>
 
-        {/* <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
-              "Sign up for grocery Week"
-            </button> */}
         
         {/* <Button variant="primary" className="addButton" onClick={() => {history.pushState("/groceries/create")}}>Add Grocery</Button> */}
         
