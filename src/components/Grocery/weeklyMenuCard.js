@@ -17,7 +17,8 @@ export const WeeklyMenuCard = ({week}) => {
 
     return (
 <Accordion>
-<Card>
+    <div>
+    <Card  className="weeklyMenuCard">
   <Card.Header>
   <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
               "Sign up for grocery Week"
@@ -39,6 +40,7 @@ export const WeeklyMenuCard = ({week}) => {
     </Card.Body>
   </Accordion.Collapse>
 </Card>
+</div>
 </Accordion>
     )
 }
