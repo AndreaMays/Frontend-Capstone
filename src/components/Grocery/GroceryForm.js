@@ -8,6 +8,9 @@ import "./Grocery.css"
 import {Form} from "react-bootstrap"
 
 export const GroceryForm = () => {
+    // "useContext" below is pulling the data from the "ProductContext" I set in the "Grocery Provider".
+    // the "useContext" is a hook in React that is gathering all the data from the Gocery Provider and passing that infor
+    // to the other components I choose to use the "useContext" in. 
     const {addProduct, getProducts, groceryMenus, getProductById, updateProduct, getAllGroceryMenus} = useContext(ProductContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { users, getUsers} = useContext(UserContext)
@@ -29,6 +32,10 @@ export const GroceryForm = () => {
         groceryMenuId: 0
     });
 
+
+// "useEffect" is a react funtion. The "dependency array", only allows this function to run one time. (Rememeber your
+// infinite loop situation when I didn't put the array brackets at the bottom.). This is done to help pull the information
+// from the fetch calls, because the information is not pulled during the render. 
      useEffect(() => {
         getAllGroceryMenus().then(getLocations).then(() => {
             if(productId){
@@ -40,7 +47,7 @@ export const GroceryForm = () => {
     }, [])
 
 
-
+// the function below is watching for the input change on the form/
     const handleControlledInputChange = (event) => {
         // console.log(event.target.id)
         const newGrocery = {...grocery}
@@ -86,7 +93,7 @@ export const GroceryForm = () => {
         }
     }
 
-    // below useEffect
+    // below useEffect is working after the intial render on the dom, 
     useEffect(() => {
         getProducts().then(() => {
             if (productId) {
@@ -141,52 +148,6 @@ export const GroceryForm = () => {
               </button>
   </Form.Group>
 </Form>
-
-
-//         <form className="groceryForm">
-//              <h2 className="groceryForm__title">{productId ? "Edit Grocery Form" : "Add Grocery Form"}</h2>
-
-//             <fieldset>
-//             <div className="form-group">
-//                 <label htmlFor="groceryMenuId">Grocery Week: </label>
-//                 <select value={grocery.groceryMenuId} name="groceryMenu" id="groceryMenuId" onChange={handleControlledInputChange} required autoFocus className="form-control" >
-//                     <option value="0">Select a Week</option>
-//                     {groceryMenus.map(gm => (                                             
-//                         <option key={gm.id} value={gm.id}>
-//                             {gm.title}
-//                         </option>
-//                     ))}
-//                 </select>
-//                 </div>
-//             </fieldset>
-
-//             <fieldset>
-//             <div className="form-group">
-//                 <label htmlFor="LocationId">Location: </label>
-                
-//                 <select value={grocery.locationId} name="location" id="locationId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Select location">
-//                     <option value="0">Select a Location</option>
-//                     {locations.map(location => (
-//                         <option key={location.id} value={location.id}>
-//                             {location.name}
-//                         </option>
-//                     ))}
-//                 </select>
-//             </div>
-//         </fieldset>
-
-//         <fieldset>
-//                 <div className="form-group">
-//                     <label htmlFor="message">Allergy Text Message</label>
-//                     <textarea type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
-//                 </div>
-//         </fieldset>
-//             <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
-//                 event.preventDefault()
-//                 handleClickSaveEditForm()}}> 
-//                 {productId ? "Save Grocery" : "Add Grocery" }
-//               </button>
-// </form>
 
 )
 }

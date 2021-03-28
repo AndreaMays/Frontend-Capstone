@@ -23,6 +23,9 @@ export const ProductProvider = (props) => {
         .then(setProducts)
     }
 
+
+// this fetch call below will run whenever the "addProduct" function is invoked. This function is geard towards
+// posting all new product from the dom to the link provided in the content of json. 
     const addProduct = (productObj) => {
         return fetch ("http://localhost:8088/products", {
             method: "POST",
@@ -41,6 +44,8 @@ export const ProductProvider = (props) => {
         
     }
 
+    // this fetchcall below is responsible for the "edit". This fetch call will focus on the the exact product Object
+    // with the specific Id detected and will put the new information provided from the edited form into the json. 
     const updateProduct = productObj => {
         return fetch(`http://localhost:8088/products/${productObj.id}`, {
         method: "PUT",
@@ -52,6 +57,8 @@ export const ProductProvider = (props) => {
         .then(getProducts)
     }
 
+    // this fetch call below is pulling the information from this provided url with the corred "id" that it is passed
+    // and returning information in the form of an object. 
     const getProductById = (id) => {
         return fetch(`http://localhost:8088/products/${id}`)
         .then(res => res.json())
