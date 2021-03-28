@@ -532,6 +532,7 @@
       "coatSize": "5T",
       "pantSize": "5",
       "shirtSize": "5",
+      "message": "She likes flowers and unicorns",
       "userId": 1,
       "id": 1
     },
@@ -542,7 +543,11 @@
       "coatSize": "8",
       "pantSize": "8",
       "shirtSize": "7",
+      "message": "He doesn't like the color red",
       "userId": 5,
-      "id": 2    }
+      "id": 2
+    }
+    
+  
   ]
 }

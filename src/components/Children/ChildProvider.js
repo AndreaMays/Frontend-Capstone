@@ -41,9 +41,14 @@ export const ChildProvider = (props) => {
         .then(getChildForms)
     }
 
+    const getChildFormById = (id) => {
+        return fetch(`http://localhost:8088/children/${id}`)
+        .then(res => res.json())
+    }
+
     return (
         <ChildContext.Provider value={{
-            childForms, getChildForms, addChildForm, deleteChildForm, updateChildForms
+            childForms, getChildForms, addChildForm, deleteChildForm, updateChildForms, getChildFormById
         }}>
             {props.children}
         </ChildContext.Provider>
