@@ -8,7 +8,7 @@
 
 .userCardOrder{
     display:flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     box-shadow: 4px 4px 20px rgb(165, 141, 88);
     transition: 0.5s;
@@ -19,3 +19,4 @@
 .userCardOrder:hover{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
 }
+
