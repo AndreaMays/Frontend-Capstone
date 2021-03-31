@@ -10,16 +10,22 @@ export const GroceryDetail = () => {
   const { getProductById, deleteProduct, updateProduct } = useContext(ProductContext)
 
   // console.log("curious", product)
+
 	const [product, setProduct] = useState({})
 
   // the "useParams" is being set with the "productId" from the URL link in application views. 
+  // "useParams" is basically a "key/value pair" meaning the "product is the key" and the "id" is the value. 
 	const {productId} = useParams();
 
+  // "useHistory" is a method provided by "reac-router-dom" that i can use to navigate. 
+  // "useHistory" gives me access to the url history that i need to navigate. (i.e. "history.push")
 	const history = useHistory();
 
   // "useEffect" is a react funtion. The "dependency array", only allows this function to run one time. (Rememeber your
 // infinite loop situation when I didn't put the array brackets at the bottom.). This is done to help pull the information
-// from the fetch calls, because the information is not pulled during the render. 
+// from the fetch calls, because the information is not pulled during the render. So basically it goes, "initial render",
+// then useEffect with the empty array/dependecy array, then runs the return. After the return, the useEffect fetches the 
+// information and then fills the array with information, then from there it goes to the "useState"
   useEffect(() => {
     // console.log("useEffect", productId)
     getProductById(productId)
@@ -37,7 +43,8 @@ export const GroceryDetail = () => {
         })
     }
 
-
+// below i am returning a form that will render the results of the grocery form. I am using "dot.notation" with the 
+// variable "product" from "useState"
   return (
     <section className="grocery">
       <h3 className="grocery__location">Location: {product.locationId}</h3>

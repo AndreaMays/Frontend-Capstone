@@ -15,8 +15,8 @@ export const ProductProvider = (props) => {
 
     // console.log("Hungry", getGroceries)
     // NOTE: line 11 -15 function is used in the GroceryList.js. We get groceries from db.json, return what we get, 
-    // return it into json then set the Groceries with the useState function.
-    // then after 18 go to grocery list
+    // return it into json (which means the returned information is put into the proper data structure)
+    //  then set the Groceries with the useState function. then after 18 go to grocery list
     const getProducts = () => {
         return fetch ("http://localhost:8088/products")
         .then(res => res.json())
@@ -87,6 +87,11 @@ export const ProductProvider = (props) => {
     }
 
     // pull groceryMenuProdItem id to pull the product items on line 62
+
+    // the ProductContext is coming from line 6 where we set "createContext" into the "ProductContext". Below, the 
+    // ProductContext is holiding the "children" of this component. Meaning, the "state variables" are being passed in
+    // as well as the functions on this page, so that they can be handed down in "props" (or rather passed to other)
+    // components in the app.
     return (
         <ProductContext.Provider value={{
             products, getProducts, addProduct, updateProduct, deleteProduct, getGroceryMenuProdItem, setGroceries, getGroceries,

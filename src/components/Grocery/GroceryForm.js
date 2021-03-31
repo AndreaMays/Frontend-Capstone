@@ -24,6 +24,12 @@ export const GroceryForm = () => {
     
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
+
+// "useState" is a React hook. This is used to set the state of the component.  It is used to store the information 
+// about the grocery in the variable "grocery" and then it sets a function called "setGrocery". 
+// Everytime this component is updated on the DOM, this state is re-rendered to the DOM. It returns a variable "grocery" 
+// with the current state value, and the orange function is there to update the value.  
+// 
     const [grocery, setGrocery] = useState({
         userId: currentUserId,
         locationId: 0,
@@ -35,7 +41,9 @@ export const GroceryForm = () => {
 
 // "useEffect" is a react funtion. The "dependency array", only allows this function to run one time. (Rememeber your
 // infinite loop situation when I didn't put the array brackets at the bottom.). This is done to help pull the information
-// from the fetch calls, because the information is not pulled during the render. 
+// from the fetch calls, because the information is not pulled during the initial render. The initial render pulls the 
+// empty array, then the order of the render moves to the return, after the return the information is pulled in the useEffect
+// from there i call "setGrocery" function which triggers the "useState".
      useEffect(() => {
         getAllGroceryMenus().then(getLocations).then(() => {
             if(productId){
@@ -93,7 +101,8 @@ export const GroceryForm = () => {
         }
     }
 
-    // below useEffect is working after the intial render on the dom, 
+    // below useEffect is working after the intial render on the dom. The empty dependency array tells it to run only once. 
+    //  It fires after the return, filling the empty array with information, and then moves on to the "state". 
     useEffect(() => {
         getProducts().then(() => {
             if (productId) {
