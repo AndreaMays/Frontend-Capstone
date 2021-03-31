@@ -226,7 +226,7 @@
     {
       "userId": 6,
       "groceryMenuId": 2,
-      "locationId": 2,
+      "locationId": 1,
       "message": "Does this form work? YAY IT worked",
       "isReceived": false,
       "id": 33
@@ -246,6 +246,22 @@
       "message": "I added buttons!!!",
       "isReceived": false,
       "id": 35
+    },
+    {
+      "userId": 6,
+      "groceryMenuId": 3,
+      "locationId": 2,
+      "message": "pb",
+      "isReceived": false,
+      "id": 36
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 3,
+      "message": "i'm allergic to all foods.",
+      "isReceived": false,
+      "id": 37
     }
   ],
   "groceryMenus": [
@@ -524,8 +540,32 @@
       "coatSize": "5T",
       "pantSize": "5",
       "shirtSize": "5",
+      "message": "She likes flowers and unicorns",
       "userId": 1,
       "id": 1
+    },
+    {
+      "name": "Cody Gellar",
+      "age": "9",
+      "gender": "male",
+      "coatSize": "8",
+      "pantSize": "8",
+      "shirtSize": "7",
+      "message": "He doesn't like the color red",
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "firstName": "",
+      "lastName": "",
+      "age": "",
+      "gender": "",
+      "coatSize": "",
+      "pantSize": "",
+      "shirtSize": "",
+      "message": "",
+      "id": 3
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { Card, CardDeck, Accordion, Button } from "react-bootstrap"
+import { Card, Accordion, Button } from "react-bootstrap"
 import { ProductContext } from "./GroceryProvider"
 import {GroceryCard} from "./GroceryCard"
 import React, {useContext} from 'react'
@@ -7,7 +7,7 @@ import { useHistory } from "react-router"
 
 
 export const WeeklyMenuCard = ({week}) => {
-    const {groceryMenuProducts, getProducts, products} = useContext(ProductContext)
+    const {groceryMenuProducts} = useContext(ProductContext)
 
     const history = useHistory()
 
@@ -17,7 +17,8 @@ export const WeeklyMenuCard = ({week}) => {
 
     return (
 <Accordion>
-<Card>
+    <div>
+    <Card  className="weeklyMenuCard">
   <Card.Header>
   <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
               "Sign up for grocery Week"
@@ -39,6 +40,7 @@ export const WeeklyMenuCard = ({week}) => {
     </Card.Body>
   </Accordion.Collapse>
 </Card>
+</div>
 </Accordion>
     )
 }

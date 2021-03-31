@@ -7,7 +7,10 @@ import {UserProvider} from "./Users/UserProvider"
 import {UserList} from "./Users/UserList"
 import {GroceryDetail} from "./Grocery/GroceryDetails"
 import {LocationProvider} from "./Location/LocationProvider"
-import {LocationList} from "./Location/LocationList"
+import {ChildProvider} from "./Children/ChildProvider"
+import {ChildrenList} from "./Children/ChildList"
+import {ChildForm} from "./Children/ChildForm"
+import {ChildDetails} from "./Children/ChildDetail"
 import { Home } from "./Home"
 import { About } from "./About"
 
@@ -25,10 +28,12 @@ export const ApplicationViews = () => {
     <ProductProvider>
         <LocationProvider>
             <UserProvider>
+                <ChildProvider>
+
            <Route exact path="/groceries">
             <GroceryList/>
-
                 </Route>
+
                 <Route path="/groceries/create">
                     <GroceryForm />
                 </Route>
@@ -43,6 +48,24 @@ export const ApplicationViews = () => {
                     <UserList />
                 </UserProvider>
             </Route>
+
+             <Route exact path="/children">
+                <ChildProvider>
+                    <ChildrenList />
+                </ChildProvider>
+            </Route>
+
+            <Route path="/children/create">
+                    <ChildForm />
+                </Route>
+                < Route path="/children/edit/:childId(\d+)">
+                    <ChildForm/>
+                </Route>
+                <Route path="/children/details/${childForm.id}">
+                    <ChildDetails/> 
+                </Route>
+
+                </ChildProvider>
             </UserProvider>
         </LocationProvider>
     </ProductProvider>

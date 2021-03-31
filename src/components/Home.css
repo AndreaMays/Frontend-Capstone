@@ -4,16 +4,38 @@
     font-size: 40pt;
     font-weight: bolder;
     justify-content:center;
+    /* text-align: left; */
+
 }
 
 .homeImage{
     border: solid black;
-    width: 30%;
-    Height: 50%
+    width: 35%;
+    Height: 40%
     
 }
 
-.homeText{
+.homeTextHeader{
     display: flex;
     justify-content: center;
+}
+
+.d-block{
+height: 350px;
+width: 50px;
+
+}
+
+.homeText{
+    color: black;
+    display: flex;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.homeTextTitle{
+    color: black;
+    font-size: 30pt;
+    font-weight: bolder;
+    justify-content: ;
 }

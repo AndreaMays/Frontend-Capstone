@@ -3,14 +3,12 @@ import { CardDeck } from "react-bootstrap"
 import React from "react"
 
 
-// "menu" on line 8 is passing in the items returned from the conditional 
-// on the weeklyMenuCard that is pulling all groceryMenu and productItems
+// "menu" on line 9 is passing in the items returned from the conditional 
+// on the weeklyMenuCard that is pulling all groceryMenu and productItems (the join table on the ERD)
 
 export const GroceryCard = ({ menu }) => (
   
   <>
-
-  
   
 <CardDeck>
    <Card className="groceryCard" style={{ width: '20rem'}}>

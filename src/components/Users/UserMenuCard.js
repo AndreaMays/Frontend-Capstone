@@ -26,7 +26,7 @@ export const UserMenuCard = ({ userForm }) => {
     return(
         <>
 
-<Card style={{ width: '18rem' }}>
+<Card className="userCardOrder" style={{ width: '13rem' }}>
   <Card.Img variant="top" src={userForm.groceryMenu.image} />
   <Card.Body>
     <Card.Title>Your Recent Order</Card.Title>

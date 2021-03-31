@@ -7,6 +7,7 @@ import { WeeklyMenuCard } from "./weeklyMenuCard"
 
 // add "get" function call to useEffect and "useContext"
 
+// here i am exporting a funtion called GroceryList
 export const GroceryList = () => {
     const { products, getProducts, groceryMenus, getAllGroceryMenus, getGroceryMenuProdItem, 
         getGroceries, groceryMenuProducts, groceries } = useContext(ProductContext)
@@ -14,6 +15,9 @@ export const GroceryList = () => {
 
     // console.log(groceryMenuProducts)
 
+// "useEffect" is a react funtion. The "dependency array", only allows this function to run one time, after the initial render. (Rememeber your
+// infinite loop situation when I didn't put the array brackets at the bottom.). This is done to help pull the information
+// from the fetch calls, because the information is not pulled during the render. 
       useEffect(() => {
         getProducts()
         getAllGroceryMenus()
@@ -47,7 +51,9 @@ export const GroceryList = () => {
         please be sure to notate that in the "message" box on the form.
   </p>
     
-        
+        {/* Below we are mapping through "groceryMenus". Inside the ".map()" function,  we set a variable to 
+        we are setting a variable to "weeklyMenu. Then we are looping through each object in the array pulling out the 
+        "weeklyMenu.id" and the "weeklyMenu". Also I am passing the yellow "week" into the "groceryCard" component.  */}
         {
             groceryMenus.map(weeklyMenu => {
                 //  console.log(pItem)
