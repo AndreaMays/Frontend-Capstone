@@ -49,30 +49,6 @@
   "products": [
     {
       "userId": 1,
-      "groceryMenuId": 1,
-      "locationId": 3,
-      "message": "round 2",
-      "isReceived": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 4,
-      "locationId": 1,
-      "message": "null",
-      "isReceived": false,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 3,
-      "message": "hope",
-      "isReceived": false,
-      "id": 7
-    },
-    {
-      "userId": 1,
       "groceryMenuId": 2,
       "locationId": 3,
       "message": "Week only",
@@ -262,6 +238,22 @@
       "message": "i'm allergic to all foods.",
       "isReceived": false,
       "id": 37
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 2,
+      "locationId": 1,
+      "message": "Frog legs and crickets. ",
+      "isReceived": false,
+      "id": 38
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 1,
+      "locationId": 2,
+      "message": "hey i'm allergic to frog legs",
+      "isReceived": false,
+      "id": 39
     }
   ],
   "groceryMenus": [
@@ -554,18 +546,6 @@
       "message": "He doesn't like the color red",
       "userId": 5,
       "id": 2
-    },
-    {
-      "userId": 1,
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "gender": "",
-      "coatSize": "",
-      "pantSize": "",
-      "shirtSize": "",
-      "message": "",
-      "id": 3
     }
   ]
 }

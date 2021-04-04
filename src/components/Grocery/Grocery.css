@@ -1,12 +1,26 @@
 .groceryCard {
-    display: flex;
+    display: block;
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
     border: 1px solid blue;
-    
+    flex-direction: row;
+
 }
 
-/* .weeklyMenuCard {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
-}     */
+.groceryListTitle {
+    display: flex;
+    justify-content: center;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bolder;
+}
+
+.groceryInfo {
+    font-family: 'Patrick Hand', cursive; 
+}
+
+.weeklyCard {
+   
+    width: 400px;
+    
+}

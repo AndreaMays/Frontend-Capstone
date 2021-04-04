@@ -27,11 +27,11 @@ export const UserList = () => {
     return (
         <>
         <div className="userMenuOrder">
-        <h2>User Menu Order</h2>
+        <h2 className="userTitle"> User Menu Order</h2>
     
              
-        <p>Please review your orders. Click the edit button to be taken to your previous grocery order, where your
-            can edit your location, week, or add a message for the admin. You can also delete your order if it is not 
+        <p className="userInstructions">Please review your orders. Click the edit button to be taken to your previous grocery order, where your
+            can edit your location, week, or add a message for the admin. <br></br>You can also delete your order if it is not 
             needed anymore.
         </p>   
   

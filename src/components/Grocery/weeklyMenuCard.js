@@ -16,9 +16,9 @@ export const WeeklyMenuCard = ({week}) => {
 // "product" on line 19 is passing in the conditional that is pulling all groceryMenu and productItems
 
     return (
-<Accordion>
+<Accordion className="row weeklyCard ">
     <div>
-    <Card  className="weeklyMenuCard">
+    <Card  className="card-group weeklyMenuCard">
   <Card.Header>
   <button className="addButton" onClick={() => {history.push("/groceries/create")}}>
               "Sign up for grocery Week"
