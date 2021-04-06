@@ -49,51 +49,11 @@
   "products": [
     {
       "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 3,
-      "message": "Week only",
-      "isReceived": false,
-      "id": 8
-    },
-    {
-      "userId": 1,
       "groceryMenuId": 1,
       "locationId": 4,
-      "message": "Will this appear to the userOrders",
+      "message": "Will this appear to the userOrders IT DID!!!",
       "isReceived": false,
       "id": 9
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 4,
-      "locationId": 2,
-      "message": "radklfja",
-      "isReceived": false,
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 2,
-      "message": "PLEASE  WORK",
-      "isReceived": false,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 3,
-      "locationId": 2,
-      "message": "Hold the hugs please",
-      "isReceived": false,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 3,
-      "message": "Hakldaoe ",
-      "isReceived": false,
-      "id": 14
     },
     {
       "userId": 5,
@@ -234,24 +194,24 @@
     {
       "userId": 1,
       "groceryMenuId": 2,
-      "locationId": 3,
-      "message": "i'm allergic to all foods.",
+      "locationId": 1,
+      "message": "hold the frog legs please and rice",
       "isReceived": false,
       "id": 37
     },
     {
       "userId": 1,
-      "groceryMenuId": 2,
-      "locationId": 1,
-      "message": "Frog legs and crickets. ",
+      "groceryMenuId": 4,
+      "locationId": 3,
+      "message": "does the edit work",
       "isReceived": false,
       "id": 38
     },
     {
       "userId": 1,
-      "groceryMenuId": 1,
-      "locationId": 2,
-      "message": "hey i'm allergic to frog legs",
+      "groceryMenuId": 3,
+      "locationId": 1,
+      "message": "love",
       "isReceived": false,
       "id": 39
     }

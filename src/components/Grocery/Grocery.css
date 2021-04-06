@@ -24,3 +24,14 @@
     width: 400px;
     
 }
+
+.groceryListWeeklyCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url(https://www.directwallpaper.co.uk/images/pictures/temp/chandelier/direct/670509-0-page-picture-large)
+}
+
+
+
+ 

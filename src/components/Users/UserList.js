@@ -34,8 +34,9 @@ export const UserList = () => {
             can edit your location, week, or add a message for the admin. <br></br>You can also delete your order if it is not 
             needed anymore.
         </p>   
-  
+  </div>
 
+<div className="userListMenuCard">
         {
           userForms.map(form => {
             

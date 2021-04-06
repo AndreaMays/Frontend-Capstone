@@ -3,7 +3,7 @@ import { ProductContext } from "../Grocery/GroceryProvider"
 import {useContext} from "react"
 import React from "react"
 import {UserContext} from "./UserProvider"
-import { Card, CardColumns, ListGroup, ListGroupItem, Button } from "react-bootstrap"
+import { Card, CardColumns, ListGroup, ListGroupItem, Button, CardDeck } from "react-bootstrap"
 import "./User.css"
 
 export const UserMenuCard = ({ userForm }) => {
@@ -26,7 +26,7 @@ export const UserMenuCard = ({ userForm }) => {
     return(
         <>
 
-    <div class="card-deck userCard">
+    {/* <div class="card-deck userCard">
     <img src={userForm.groceryMenu.image} class="card-img-top" alt="..."></img>
     
     <div class="card-body">
@@ -40,7 +40,7 @@ export const UserMenuCard = ({ userForm }) => {
     <div class="card-footer">
     <Button variant="info" onClick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</Button>{' '}
     <Button variant="danger" onClick={handleRelease}>Delete</Button> 
-    </div>
+    </div> */}
   
   {/* <div class="card">
     <img src="..." class="card-img-top" alt="...">
@@ -61,19 +61,19 @@ export const UserMenuCard = ({ userForm }) => {
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
     </div> */}
-  </div>
+  {/* </div> */}
 
 
 
 
-{/* <CardColumns>
+
 <Card className="userCardOrder" style={{ width: '20rem' }}>
   <Card.Img variant="top" src={userForm.groceryMenu.image} />
-  <Card.Body>
+  <Card.Body className="userCardBody" >
     <Card.Title>Your Recent Order</Card.Title>
     <Card.Text>
     </Card.Text>
-  </Card.Body>
+  
 
   <ListGroup className="list-group-flush">
     <ListGroupItem>Week: {userForm.groceryMenu.title}</ListGroupItem>
@@ -81,12 +81,12 @@ export const UserMenuCard = ({ userForm }) => {
     <ListGroupItem>Message: {userForm.message}</ListGroupItem>
   </ListGroup>
 
-  <Card.Body>
+ 
     <Button variant="info" onClick={() => { history.push(`/orders/edit/${userForm.id}`)}}>Edit</Button>{' '}
     <Button variant="danger" onClick={handleRelease}>Delete</Button> 
   </Card.Body>
 </Card>
-</CardColumns> */}
+
  
     </>
     )
