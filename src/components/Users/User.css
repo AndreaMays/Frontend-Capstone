@@ -1,22 +1,52 @@
-.card {
+/* .card {
     display: flex;
     flex-basis: 80%;
     margin: 1em;
     border: solid 2px blue;
+    /* flex-direction: row; */
     
-}
 
-.userCardOrder{
-    display:flex;
+.userListMenuCard {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+}
+
+
+.userCardOrder {
     box-shadow: 4px 4px 20px rgb(165, 141, 88);
     transition: 0.5s;
     border-radius: 10px;
-    
+    height: 550px;
+     
 }
+
+.userTitle {
+    display: flex;
+    font-family: 'Patrick Hand', cursive; 
+    justify-content: center;
+    font-weight: bolder;
+    color:black
+} 
 
 .userCardOrder:hover{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
 }
+
+.userInstructions{
+    display: flex;
+    justify-content: center;
+    font-family: 'Patrick Hand', cursive;
+}
+
+
+ /* .userCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 350px;
+
+} */
+
 

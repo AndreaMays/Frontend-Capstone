@@ -148,7 +148,7 @@ export const GroceryForm = () => {
   </Form.Group>
   
   <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Example textarea</Form.Label>
+    <Form.Label>Leave a message below if there are food allergies or another pickup time is needed</Form.Label>
     <Form.Control as="textarea" rows={3} type="text" id="message" autoFocus className="form-control" onChange={handleControlledInputChange} placeholder="Please fill in any food allergies" value={grocery.message} />
     <button className="SaveEditButton" disabled={isLoading}  onClick={event => {
                 event.preventDefault()

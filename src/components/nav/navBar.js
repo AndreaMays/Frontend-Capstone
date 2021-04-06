@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav'
 
 export const NavBar = (props) => {
   return (
+    <>
+    {/* <img className="logo" src="../Agape Resource Community Center Logo.png" /> */}
     
     <Nav className="navBar" justify variant="tabs" defaultActiveKey="/home">
     <Nav.Item>
@@ -25,7 +27,7 @@ export const NavBar = (props) => {
     </Nav.Item>
   </Nav>
  
-  
+  </>
 
   )
 }

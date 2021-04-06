@@ -1,12 +1,37 @@
 .groceryCard {
-    display: flex;
+    display: block;
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
     border: 1px solid blue;
+    flex-direction: row;
+
+}
+
+.groceryListTitle {
+    display: flex;
+    justify-content: center;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bolder;
+}
+
+.groceryInfo {
+    font-family: 'Patrick Hand', cursive; 
+}
+
+.weeklyCard {
+   
+    width: 400px;
     
 }
 
-/* .weeklyMenuCard {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 2);
-}     */
+.groceryListWeeklyCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url(https://www.directwallpaper.co.uk/images/pictures/temp/chandelier/direct/670509-0-page-picture-large)
+}
+
+
+
+ 
