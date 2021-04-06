@@ -195,17 +195,9 @@
       "userId": 1,
       "groceryMenuId": 2,
       "locationId": 1,
-      "message": "hold the frog legs please and rice",
+      "message": "hold the frog legs please and rice please",
       "isReceived": false,
       "id": 37
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 4,
-      "locationId": 3,
-      "message": "does the edit work",
-      "isReceived": false,
-      "id": 38
     },
     {
       "userId": 1,
@@ -214,6 +206,14 @@
       "message": "love",
       "isReceived": false,
       "id": 39
+    },
+    {
+      "userId": 1,
+      "groceryMenuId": 4,
+      "locationId": 1,
+      "message": "none",
+      "isReceived": false,
+      "id": 40
     }
   ],
   "groceryMenus": [

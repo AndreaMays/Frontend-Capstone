@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav'
 
+
 export const NavBar = (props) => {
   return (
     <>
@@ -27,6 +28,7 @@ export const NavBar = (props) => {
     </Nav.Item>
   </Nav>
  
+  
   </>
 
   )
