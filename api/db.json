@@ -51,7 +51,7 @@
       "userId": 1,
       "groceryMenuId": 1,
       "locationId": 4,
-      "message": "Will this appear to the userOrders IT DID!!!",
+      "message": "no allergies. Please leave at the door. ",
       "isReceived": false,
       "id": 9
     },
@@ -195,25 +195,9 @@
       "userId": 1,
       "groceryMenuId": 2,
       "locationId": 1,
-      "message": "hold the frog legs please and rice",
+      "message": "hold the frog legs please and rice please",
       "isReceived": false,
       "id": 37
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 4,
-      "locationId": 3,
-      "message": "does the edit work",
-      "isReceived": false,
-      "id": 38
-    },
-    {
-      "userId": 1,
-      "groceryMenuId": 3,
-      "locationId": 1,
-      "message": "love",
-      "isReceived": false,
-      "id": 39
     }
   ],
   "groceryMenus": [

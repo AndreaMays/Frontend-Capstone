@@ -32,6 +32,20 @@
     background-image: url(https://www.directwallpaper.co.uk/images/pictures/temp/chandelier/direct/670509-0-page-picture-large)
 }
 
+.spaghettiKid {
+    width: 500px;
+    height: 260px;
+    box-shadow: 4px 4px 20px rgb(165, 141, 88);
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.groceryPic {
+    width: 325px;
+    box-shadow: 4px 4px 20px rgb(165, 141, 88);
+    transition: 0.5s;
+    border-radius: 10px;
+}
 
 
  

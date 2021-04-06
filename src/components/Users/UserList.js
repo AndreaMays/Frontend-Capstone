@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { UserContext } from "./UserProvider"
 import { UserMenuCard} from "./UserMenuCard"
 import "./User.css"
+import {Card} from "react-bootstrap"
 
 export const UserList = () => {
   
@@ -44,6 +45,8 @@ export const UserList = () => {
           })
         }
       </div>
+
+      <Card.Footer>@ARCCapp2021 <br></br>           Email:agape@resource.center </Card.Footer>
       </>
     )
   }
